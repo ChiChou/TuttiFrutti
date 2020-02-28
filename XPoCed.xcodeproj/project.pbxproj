@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA550BCB2409461C0026FCD8 /* CenteredTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA550BCA2409461C0026FCD8 /* CenteredTabViewController.m */; };
 		AA5FBFBB24091ACD00EEF195 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5FBFBA24091ACD00EEF195 /* AppDelegate.m */; };
 		AA5FBFBE24091ACD00EEF195 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5FBFBD24091ACD00EEF195 /* ViewController.m */; };
 		AA5FBFC024091ACE00EEF195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA5FBFBF24091ACE00EEF195 /* Assets.xcassets */; };
 		AA5FBFC324091ACE00EEF195 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA5FBFC124091ACE00EEF195 /* Main.storyboard */; };
 		AA5FBFC624091ACE00EEF195 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5FBFC524091ACE00EEF195 /* main.m */; };
+		AA5FBFD024091CFC00EEF195 /* ServicesSourceDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5FBFCF24091CFC00EEF195 /* ServicesSourceDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA550BC92409461C0026FCD8 /* CenteredTabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CenteredTabViewController.h; sourceTree = "<group>"; };
+		AA550BCA2409461C0026FCD8 /* CenteredTabViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CenteredTabViewController.m; sourceTree = "<group>"; };
 		AA5FBFB624091ACD00EEF195 /* XPoCed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XPoCed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA5FBFB924091ACD00EEF195 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AA5FBFBA24091ACD00EEF195 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -25,6 +29,8 @@
 		AA5FBFC424091ACE00EEF195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA5FBFC524091ACE00EEF195 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AA5FBFC724091ACE00EEF195 /* XPoCed.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XPoCed.entitlements; sourceTree = "<group>"; };
+		AA5FBFCE24091CFC00EEF195 /* ServicesSourceDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServicesSourceDelegate.h; sourceTree = "<group>"; };
+		AA5FBFCF24091CFC00EEF195 /* ServicesSourceDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServicesSourceDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +63,7 @@
 		AA5FBFB824091ACD00EEF195 /* XPoCed */ = {
 			isa = PBXGroup;
 			children = (
+				AA5FBFCD24091CD200EEF195 /* Views */,
 				AA5FBFB924091ACD00EEF195 /* AppDelegate.h */,
 				AA5FBFBA24091ACD00EEF195 /* AppDelegate.m */,
 				AA5FBFBC24091ACD00EEF195 /* ViewController.h */,
@@ -68,6 +75,17 @@
 				AA5FBFC724091ACE00EEF195 /* XPoCed.entitlements */,
 			);
 			path = XPoCed;
+			sourceTree = "<group>";
+		};
+		AA5FBFCD24091CD200EEF195 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AA5FBFCE24091CFC00EEF195 /* ServicesSourceDelegate.h */,
+				AA5FBFCF24091CFC00EEF195 /* ServicesSourceDelegate.m */,
+				AA550BC92409461C0026FCD8 /* CenteredTabViewController.h */,
+				AA550BCA2409461C0026FCD8 /* CenteredTabViewController.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,8 +158,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA5FBFBE24091ACD00EEF195 /* ViewController.m in Sources */,
+				AA550BCB2409461C0026FCD8 /* CenteredTabViewController.m in Sources */,
 				AA5FBFC624091ACE00EEF195 /* main.m in Sources */,
 				AA5FBFBB24091ACD00EEF195 /* AppDelegate.m in Sources */,
+				AA5FBFD024091CFC00EEF195 /* ServicesSourceDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +300,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = me.chichou.XPoCed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -297,6 +318,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = me.chichou.XPoCed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
