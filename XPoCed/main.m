@@ -7,14 +7,19 @@
 //
 
 #import <Cocoa/Cocoa.h>
+
+#if 0
 #import "NaiveClassDump.h"
+#endif
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // Setup code that might create autoreleased objects goes here.
+#if 0
+        // test class dumper
         [[NaiveClassDump shared] dumpForPath:[NSURL fileURLWithPath:@"/System/Library/CoreServices/SubmitDiagInfo"] withReply:^(NSError * _Nonnull err, DumpResult * _Nonnull result) {
             NSLog(@"%@", result);
         }];
+#endif
     }
     return NSApplicationMain(argc, argv);
 }

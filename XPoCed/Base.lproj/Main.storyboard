@@ -544,15 +544,6 @@
                                         <rect key="frame" x="281" y="0.0" width="619" height="693"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
-                                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xsx-jm-Vd6">
-                                                <rect key="frame" x="0.0" y="0.0" width="619" height="654"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <textFieldCell key="cell" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="gzQ-5V-zAF">
-                                                    <font key="font" metaFont="system"/>
-                                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                </textFieldCell>
-                                            </textField>
                                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xJ7-zu-Fjh">
                                                 <rect key="frame" x="579" y="655" width="39" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
@@ -570,6 +561,15 @@
                                                 <textFieldCell key="cell" lineBreakMode="clipping" selectable="YES" title="Executable Path" usesSingleLineMode="YES" id="5MX-YY-fyF">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MFq-6u-goa">
+                                                <rect key="frame" x="13" y="374" width="599" height="280"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                <textFieldCell key="cell" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="0EV-Eh-xBM">
+                                                    <font key="font" metaFont="system"/>
+                                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
@@ -591,7 +591,7 @@
                     </view>
                     <connections>
                         <outlet property="actionMenu" destination="nIz-Nl-3pQ" id="lHz-uv-PJa"/>
-                        <outlet property="detailField" destination="Xsx-jm-Vd6" id="xy7-Qj-xXW"/>
+                        <outlet property="detailField" destination="MFq-6u-goa" id="Sfm-A7-3ec"/>
                         <outlet property="detailPanel" destination="mPl-m6-CrT" id="FrI-dZ-iHt"/>
                         <outlet property="outlineView" destination="SjY-9T-Ht9" id="ipR-6x-ItN"/>
                         <outlet property="pathField" destination="D2W-DV-xY4" id="1GK-Wf-TsS"/>

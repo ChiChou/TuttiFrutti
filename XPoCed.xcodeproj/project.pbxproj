@@ -17,8 +17,6 @@
 		AA5FBFC024091ACE00EEF195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA5FBFBF24091ACE00EEF195 /* Assets.xcassets */; };
 		AA5FBFC324091ACE00EEF195 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA5FBFC124091ACE00EEF195 /* Main.storyboard */; };
 		AA5FBFC624091ACE00EEF195 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5FBFC524091ACE00EEF195 /* main.m */; };
-		AAA6B50F240A73C000CCE54F /* ClassDumper.m in Sources */ = {isa = PBXBuildFile; fileRef = AA04180D240A22E900EDAAEC /* ClassDumper.m */; };
-		AAA6B510240A73C000CCE54F /* DumpResult.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB22254240A6B8000FA1237 /* DumpResult.m */; };
 		AAAE3C73240975CF00AC2CDB /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE3C72240975CF00AC2CDB /* WindowController.m */; };
 		AAB2224F240A296A00FA1237 /* NaiveClassDump.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB2224E240A296A00FA1237 /* NaiveClassDump.m */; };
 		AAB22255240A6B8000FA1237 /* DumpResult.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB22254240A6B8000FA1237 /* DumpResult.m */; };
@@ -98,6 +96,10 @@
 		AA04180A240A22E900EDAAEC /* ClassDumper */ = {
 			isa = PBXGroup;
 			children = (
+				AA04180C240A22E900EDAAEC /* ClassDumper.h */,
+				AA04180D240A22E900EDAAEC /* ClassDumper.m */,
+				AAB22253240A6B8000FA1237 /* DumpResult.h */,
+				AAB22254240A6B8000FA1237 /* DumpResult.m */,
 				AA04180F240A22E900EDAAEC /* main.m */,
 				AA041811240A22E900EDAAEC /* Info.plist */,
 			);
@@ -183,10 +185,6 @@
 			isa = PBXGroup;
 			children = (
 				AA04180B240A22E900EDAAEC /* ClassDumperProtocol.h */,
-				AA04180C240A22E900EDAAEC /* ClassDumper.h */,
-				AA04180D240A22E900EDAAEC /* ClassDumper.m */,
-				AAB22253240A6B8000FA1237 /* DumpResult.h */,
-				AAB22254240A6B8000FA1237 /* DumpResult.m */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -305,8 +303,6 @@
 				AA550BDA240951370026FCD8 /* MachServiceItem.m in Sources */,
 				AA550BD624094E910026FCD8 /* MachServices.m in Sources */,
 				AAB2224F240A296A00FA1237 /* NaiveClassDump.m in Sources */,
-				AAA6B50F240A73C000CCE54F /* ClassDumper.m in Sources */,
-				AAA6B510240A73C000CCE54F /* DumpResult.m in Sources */,
 				AA5FBFC624091ACE00EEF195 /* main.m in Sources */,
 				AA5FBFBB24091ACD00EEF195 /* AppDelegate.m in Sources */,
 			);
