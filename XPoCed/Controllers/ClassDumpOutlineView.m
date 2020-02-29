@@ -51,11 +51,8 @@
         classesRoot.children = [children copy];
 
         [children removeAllObjects];
-        for (ClassInfo *info in result.classes) {
-            ClassDumpItem *item = [[ClassDumpItem alloc] init];
-            item.type = kClassNode;
-            item.name = [NSString stringWithFormat:@"@interface %@", info.name];
-            
+        for (ProtocolInfo *info in result.protocols) {
+            ClassDumpItem *item = [ClassDumpItem nodeWithProtocol:info];
             [children addObject:item];
         }
         protocolsRoot.children = [children copy];
