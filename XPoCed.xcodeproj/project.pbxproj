@@ -14,6 +14,7 @@
 		AA45F83E240A9D2200846A36 /* ClassDumpItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AA45F83D240A9D2200846A36 /* ClassDumpItem.m */; };
 		AA45F83F240A9EFE00846A36 /* DumpResult.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB22254240A6B8000FA1237 /* DumpResult.m */; };
 		AA45F842240AB88100846A36 /* Magic.m in Sources */ = {isa = PBXBuildFile; fileRef = AA45F841240AB88100846A36 /* Magic.m */; };
+		AA45F845240ABE9B00846A36 /* NetBottom.m in Sources */ = {isa = PBXBuildFile; fileRef = AA45F844240ABE9B00846A36 /* NetBottom.m */; };
 		AA550BD624094E910026FCD8 /* MachServices.m in Sources */ = {isa = PBXBuildFile; fileRef = AA550BD524094E910026FCD8 /* MachServices.m */; };
 		AA550BDA240951370026FCD8 /* MachServiceItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AA550BD9240951370026FCD8 /* MachServiceItem.m */; };
 		AA550BDF2409572C0026FCD8 /* ServicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA550BDE2409572C0026FCD8 /* ServicesViewController.m */; };
@@ -63,6 +64,9 @@
 		AA45F83D240A9D2200846A36 /* ClassDumpItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassDumpItem.m; sourceTree = "<group>"; };
 		AA45F840240AB7D100846A36 /* Magic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Magic.h; sourceTree = "<group>"; };
 		AA45F841240AB88100846A36 /* Magic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Magic.m; sourceTree = "<group>"; };
+		AA45F843240ABE9B00846A36 /* NetBottom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetBottom.h; sourceTree = "<group>"; };
+		AA45F844240ABE9B00846A36 /* NetBottom.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetBottom.m; sourceTree = "<group>"; };
+		AA45F846240AC17F00846A36 /* NetworkStatistics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkStatistics.h; sourceTree = "<group>"; };
 		AA550BD424094E910026FCD8 /* MachServices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MachServices.h; sourceTree = "<group>"; };
 		AA550BD524094E910026FCD8 /* MachServices.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MachServices.m; sourceTree = "<group>"; };
 		AA550BD8240951370026FCD8 /* MachServiceItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MachServiceItem.h; sourceTree = "<group>"; };
@@ -121,6 +125,9 @@
 				AA550BD524094E910026FCD8 /* MachServices.m */,
 				AAB2224D240A296A00FA1237 /* NaiveClassDump.h */,
 				AAB2224E240A296A00FA1237 /* NaiveClassDump.m */,
+				AA45F843240ABE9B00846A36 /* NetBottom.h */,
+				AA45F844240ABE9B00846A36 /* NetBottom.m */,
+				AA45F846240AC17F00846A36 /* NetworkStatistics.h */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -316,6 +323,7 @@
 			files = (
 				AA45F83F240A9EFE00846A36 /* DumpResult.m in Sources */,
 				AA550BDF2409572C0026FCD8 /* ServicesViewController.m in Sources */,
+				AA45F845240ABE9B00846A36 /* NetBottom.m in Sources */,
 				AAAE3C73240975CF00AC2CDB /* WindowController.m in Sources */,
 				AA550BDA240951370026FCD8 /* MachServiceItem.m in Sources */,
 				AA550BD624094E910026FCD8 /* MachServices.m in Sources */,
@@ -496,6 +504,12 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				OTHER_LDFLAGS = (
+					"-F",
+					/System/Library/PrivateFrameworks,
+					"-framework",
+					NetworkStatistics,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.chichou.XPoCed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -514,6 +528,12 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				OTHER_LDFLAGS = (
+					"-F",
+					/System/Library/PrivateFrameworks,
+					"-framework",
+					NetworkStatistics,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.chichou.XPoCed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
