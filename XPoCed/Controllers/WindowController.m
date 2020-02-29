@@ -8,6 +8,9 @@
 
 #import "WindowController.h"
 
+#import <xpc/xpc.h>
+#import "ClassDumperProtocol.h"
+
 @interface WindowController ()
 @property (weak) IBOutlet NSSearchField *search;
 @property (weak) IBOutlet NSSegmentedControl *featureSwitch;
@@ -18,6 +21,8 @@
 - (void)windowWillLoad {
     self.search.delegate = self;
     self.featureSwitch.selectedSegment = 0;
+    
+
 }
 
 - (void)search:(NSString*)query {
