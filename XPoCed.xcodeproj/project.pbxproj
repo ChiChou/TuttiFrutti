@@ -10,6 +10,10 @@
 		AA04180E240A22E900EDAAEC /* ClassDumper.m in Sources */ = {isa = PBXBuildFile; fileRef = AA04180D240A22E900EDAAEC /* ClassDumper.m */; };
 		AA041810240A22E900EDAAEC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA04180F240A22E900EDAAEC /* main.m */; };
 		AA041814240A22E900EDAAEC /* ClassDumper.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = AA041809240A22E900EDAAEC /* ClassDumper.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AA45F83B240A9B1300846A36 /* ClassDumpOutlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA45F83A240A9B1300846A36 /* ClassDumpOutlineView.m */; };
+		AA45F83E240A9D2200846A36 /* ClassDumpItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AA45F83D240A9D2200846A36 /* ClassDumpItem.m */; };
+		AA45F83F240A9EFE00846A36 /* DumpResult.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB22254240A6B8000FA1237 /* DumpResult.m */; };
+		AA45F842240AB88100846A36 /* Magic.m in Sources */ = {isa = PBXBuildFile; fileRef = AA45F841240AB88100846A36 /* Magic.m */; };
 		AA550BD624094E910026FCD8 /* MachServices.m in Sources */ = {isa = PBXBuildFile; fileRef = AA550BD524094E910026FCD8 /* MachServices.m */; };
 		AA550BDA240951370026FCD8 /* MachServiceItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AA550BD9240951370026FCD8 /* MachServiceItem.m */; };
 		AA550BDF2409572C0026FCD8 /* ServicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA550BDE2409572C0026FCD8 /* ServicesViewController.m */; };
@@ -53,6 +57,12 @@
 		AA04180D240A22E900EDAAEC /* ClassDumper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassDumper.m; sourceTree = "<group>"; };
 		AA04180F240A22E900EDAAEC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AA041811240A22E900EDAAEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA45F839240A9B1300846A36 /* ClassDumpOutlineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassDumpOutlineView.h; sourceTree = "<group>"; };
+		AA45F83A240A9B1300846A36 /* ClassDumpOutlineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassDumpOutlineView.m; sourceTree = "<group>"; };
+		AA45F83C240A9D2200846A36 /* ClassDumpItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassDumpItem.h; sourceTree = "<group>"; };
+		AA45F83D240A9D2200846A36 /* ClassDumpItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassDumpItem.m; sourceTree = "<group>"; };
+		AA45F840240AB7D100846A36 /* Magic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Magic.h; sourceTree = "<group>"; };
+		AA45F841240AB88100846A36 /* Magic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Magic.m; sourceTree = "<group>"; };
 		AA550BD424094E910026FCD8 /* MachServices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MachServices.h; sourceTree = "<group>"; };
 		AA550BD524094E910026FCD8 /* MachServices.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MachServices.m; sourceTree = "<group>"; };
 		AA550BD8240951370026FCD8 /* MachServiceItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MachServiceItem.h; sourceTree = "<group>"; };
@@ -98,8 +108,6 @@
 			children = (
 				AA04180C240A22E900EDAAEC /* ClassDumper.h */,
 				AA04180D240A22E900EDAAEC /* ClassDumper.m */,
-				AAB22253240A6B8000FA1237 /* DumpResult.h */,
-				AAB22254240A6B8000FA1237 /* DumpResult.m */,
 				AA04180F240A22E900EDAAEC /* main.m */,
 				AA041811240A22E900EDAAEC /* Info.plist */,
 			);
@@ -122,6 +130,8 @@
 			children = (
 				AA550BD8240951370026FCD8 /* MachServiceItem.h */,
 				AA550BD9240951370026FCD8 /* MachServiceItem.m */,
+				AA45F83C240A9D2200846A36 /* ClassDumpItem.h */,
+				AA45F83D240A9D2200846A36 /* ClassDumpItem.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -131,6 +141,8 @@
 			children = (
 				AA550BDD2409572C0026FCD8 /* ServicesViewController.h */,
 				AA550BDE2409572C0026FCD8 /* ServicesViewController.m */,
+				AA45F839240A9B1300846A36 /* ClassDumpOutlineView.h */,
+				AA45F83A240A9B1300846A36 /* ClassDumpOutlineView.m */,
 				AAAE3C71240975CF00AC2CDB /* WindowController.h */,
 				AAAE3C72240975CF00AC2CDB /* WindowController.m */,
 			);
@@ -185,6 +197,10 @@
 			isa = PBXGroup;
 			children = (
 				AA04180B240A22E900EDAAEC /* ClassDumperProtocol.h */,
+				AAB22253240A6B8000FA1237 /* DumpResult.h */,
+				AAB22254240A6B8000FA1237 /* DumpResult.m */,
+				AA45F840240AB7D100846A36 /* Magic.h */,
+				AA45F841240AB88100846A36 /* Magic.m */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -298,12 +314,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA45F83F240A9EFE00846A36 /* DumpResult.m in Sources */,
 				AA550BDF2409572C0026FCD8 /* ServicesViewController.m in Sources */,
 				AAAE3C73240975CF00AC2CDB /* WindowController.m in Sources */,
 				AA550BDA240951370026FCD8 /* MachServiceItem.m in Sources */,
 				AA550BD624094E910026FCD8 /* MachServices.m in Sources */,
+				AA45F83B240A9B1300846A36 /* ClassDumpOutlineView.m in Sources */,
 				AAB2224F240A296A00FA1237 /* NaiveClassDump.m in Sources */,
+				AA45F83E240A9D2200846A36 /* ClassDumpItem.m in Sources */,
 				AA5FBFC624091ACE00EEF195 /* main.m in Sources */,
+				AA45F842240AB88100846A36 /* Magic.m in Sources */,
 				AA5FBFBB24091ACD00EEF195 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

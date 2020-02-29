@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "MachServiceItem.h"
+#import "ClassDumpOutlineView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

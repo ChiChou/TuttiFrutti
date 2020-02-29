@@ -36,23 +36,8 @@
     return self;
 }
 
-- (void)dumpForPath:(NSURL *)url withReply:(void (^)(NSError * err, DumpResult*))reply {
-    [self.connection.remoteObjectProxy copyClassesForMachO:url withReply:^(NSError * _Nullable err, DumpResult* _Nullable result) {
-        NSLog(@"%@\n%@", err, result);
-        reply(err, result);
-        
-//        [result appendFormat:@"@interface %s", classes[i]];
-//
-//        if (dumpThisClass)
-//            [result appendString:@">"];
-//            [result appendFormat:@"\t-%@\n", methodName];
-//        [result appendString:@"@end\n"];
-//        [result appendString:@"\n\n"];
-//        [result appendFormat:@"\t+%@\n", methodName];
-//        [result appendFormat:@"@protocol %@\n", protocolName];
-//        [result appendFormat:@"\t-%s\n", sel_getName(method.name)];
-//        [result appendString:@"@end\n"];
-    }];
+- (void)dumpFor:(NSURL *)url withReply:(void (^)(NSError * err, DumpResult*))reply {
+    [self.connection.remoteObjectProxy copyClassesForMachO:url withReply:reply];
 }
 
 @end

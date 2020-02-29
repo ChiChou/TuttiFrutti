@@ -7,6 +7,7 @@
 //
 
 #import "ServicesViewController.h"
+#import "Magic.h"
 
 @interface ServicesViewController ()
 
@@ -14,6 +15,8 @@
 @property (weak) IBOutlet NSTextField *detailField;
 @property (weak) IBOutlet NSTextField *pathField;
 @property (weak) IBOutlet NSOutlineView *outlineView;
+@property (weak) IBOutlet ClassDumpOutlineView *classdumpOutlineView;
+@property (weak) IBOutlet NSProgressIndicator *classdumpIndicator;
 @property (strong) IBOutlet NSMenu *actionMenu;
 @end
 
@@ -29,6 +32,18 @@
     [self refresh];
     
     _detailPanel.hidden = YES;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+        selector:@selector(receiveClassDumpLoadingNotification:)
+        name:kNotificationClassDumpLoading
+        object:nil];
+}
+
+- (void)receiveClassDumpLoadingNotification:(NSNotification *) notification {
+    if ([notification.name isEqualToString:kNotificationClassDumpLoading]) {
+        NSNumber* status = notification.object;
+        _classdumpIndicator.hidden = !status.boolValue;
+    }
 }
 
 - (void)refresh {
@@ -136,6 +151,9 @@
             MachServiceItem *item = self->selected = group.services[index - current];
             [_detailField setStringValue:item.info.description];
             [_pathField setStringValue:item.path];
+            
+            _classdumpIndicator.hidden = NO;
+            _classdumpOutlineView.path = item.path;
             break;
         }
         current += group.services.count;
