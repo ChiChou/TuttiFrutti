@@ -23,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (id)groupWithName:(NSString *)name;
 - (BOOL)isGroup;
+- (NSString *)path;
 
 @end
 

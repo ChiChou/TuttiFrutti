@@ -1,11 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="zzh-TD-vMh">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="Vrt-iE-UGJ">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Window Controller-->
+        <scene sceneID="Gfu-E9-lMV">
+            <objects>
+                <windowController id="Vrt-iE-UGJ" customClass="WindowController" sceneMemberID="viewController">
+                    <window key="window" title="XPoCed" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="Q2h-CL-0c1">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="516" y="573" width="800" height="600"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="3008" height="1692"/>
+                        <value key="minSize" type="size" width="800" height="600"/>
+                        <toolbar key="toolbar" implicitIdentifier="671DF7C4-DFA2-4691-8D96-3611ECC644A0" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="p3W-Nq-JbX">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="Z5x-fT-m5a"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="UxX-0b-mZz"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="tPg-NT-bbP"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="cbd-Mi-9kT"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="wL5-Ey-6kL"/>
+                                <toolbarItem implicitItemIdentifier="04446D8F-80C2-4E8F-8088-7716B5A1FAA0" label="Custom View" paletteLabel="Custom View" sizingBehavior="auto" id="3Ew-xB-wMf">
+                                    <nil key="toolTip"/>
+                                    <searchField key="view" wantsLayer="YES" verticalHuggingPriority="750" textCompletion="NO" id="WI3-1n-MhU">
+                                        <rect key="frame" x="0.0" y="14" width="96" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="AIJ-3T-a9O">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </searchFieldCell>
+                                    </searchField>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="C6C60813-6B98-41CC-9F9A-AAA12B4F8229" label="Custom View" paletteLabel="Custom View" sizingBehavior="auto" id="cyG-xO-PfD">
+                                    <nil key="toolTip"/>
+                                    <segmentedControl key="view" verticalHuggingPriority="750" id="VTC-6t-fzw">
+                                        <rect key="frame" x="0.0" y="14" width="335" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="selectOne" id="2yZ-0v-sUC">
+                                            <font key="font" metaFont="system"/>
+                                            <segments>
+                                                <segment label="Services" image="NSAdvanced"/>
+                                                <segment label="Network" image="NSNetwork" selected="YES" tag="1"/>
+                                                <segment label="Schemes" image="NSApplicationIcon"/>
+                                            </segments>
+                                        </segmentedCell>
+                                        <connections>
+                                            <action selector="switchPanel:" target="Vrt-iE-UGJ" id="sJT-jW-zP9"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </toolbarItem>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems>
+                                <toolbarItem reference="cyG-xO-PfD"/>
+                                <toolbarItem reference="wL5-Ey-6kL"/>
+                                <toolbarItem reference="3Ew-xB-wMf"/>
+                            </defaultToolbarItems>
+                        </toolbar>
+                    </window>
+                    <connections>
+                        <outlet property="featureSwitch" destination="VTC-6t-fzw" id="zfx-4Q-oei"/>
+                        <outlet property="search" destination="WI3-1n-MhU" id="Ivx-sb-vUw"/>
+                        <segue destination="jzg-UU-sVq" kind="relationship" relationship="window.shadowedContentViewController" id="711-e5-a3d"/>
+                    </connections>
+                </windowController>
+                <customObject id="Vwj-hk-APs" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1025" y="-383.5"/>
+        </scene>
         <!--Application-->
         <scene sceneID="JPo-4y-FX3">
             <objects>
@@ -332,6 +397,9 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="Action" id="dH8-vG-Q03">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
                             <menuItem title="Help" id="wpr-3q-Mcd">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
@@ -354,61 +422,32 @@
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1000" y="-26"/>
-        </scene>
-        <!--XPoCed-->
-        <scene sceneID="LH2-o8-4M7">
-            <objects>
-                <tabViewController title="XPoCed" selectedTabViewItemIndex="0" tabStyle="toolbar" id="zzh-TD-vMh" customClass="CenteredTabViewController" sceneMemberID="viewController">
-                    <tabViewItems>
-                        <tabViewItem identifier="" id="Muj-F2-sFh"/>
-                        <tabViewItem identifier="" id="B6a-ZU-RKt"/>
-                        <tabViewItem id="j5d-Xx-6GJ"/>
-                    </tabViewItems>
-                    <viewControllerTransitionOptions key="transitionOptions"/>
-                    <tabView key="tabView" autoresizesSubviews="NO" type="noTabsNoBorder" id="NHm-nk-RQB">
-                        <rect key="frame" x="-147" y="0.0" width="904" height="587"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <font key="font" metaFont="message"/>
-                        <connections>
-                            <outlet property="delegate" destination="zzh-TD-vMh" id="QD8-A5-THG"/>
-                        </connections>
-                    </tabView>
-                    <connections>
-                        <outlet property="tabView" destination="NHm-nk-RQB" id="HMt-He-327"/>
-                        <segue destination="o8E-hg-bCI" kind="relationship" relationship="tabItems" id="nDH-pg-gjo"/>
-                        <segue destination="VpG-Rt-cQU" kind="relationship" relationship="tabItems" id="n5B-kP-eS6"/>
-                        <segue destination="r7y-sE-Oa8" kind="relationship" relationship="tabItems" id="0Ld-cx-WBt"/>
-                    </connections>
-                </tabViewController>
-                <customObject id="LSf-Nd-msm" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="999" y="370.5"/>
+            <point key="canvasLocation" x="1002" y="-888"/>
         </scene>
         <!--XPC-->
         <scene sceneID="A2T-pU-qPg">
             <objects>
                 <viewController title="XPC" id="o8E-hg-bCI" customClass="ServicesViewController" sceneMemberID="viewController">
                     <view key="view" id="SCS-XR-vii">
-                        <rect key="frame" x="0.0" y="0.0" width="900" height="613"/>
+                        <rect key="frame" x="0.0" y="0.0" width="900" height="693"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <splitView arrangesAllSubviews="NO" dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UbM-G6-HPz">
-                                <rect key="frame" x="0.0" y="0.0" width="900" height="613"/>
+                                <rect key="frame" x="0.0" y="0.0" width="900" height="693"/>
                                 <subviews>
                                     <customView fixedFrame="YES" id="3Ci-UW-HvC">
-                                        <rect key="frame" x="0.0" y="0.0" width="271" height="613"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="271" height="693"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
                                             <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9hC-o2-JCi">
-                                                <rect key="frame" x="0.0" y="0.0" width="271" height="613"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="271" height="693"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <clipView key="contentView" drawsBackground="NO" id="KPa-4D-lkO">
-                                                    <rect key="frame" x="1" y="1" width="269" height="611"/>
+                                                    <rect key="frame" x="1" y="1" width="269" height="691"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="mn1-2d-VRT" id="SjY-9T-Ht9">
-                                                            <rect key="frame" x="0.0" y="0.0" width="269" height="611"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="269" height="691"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <size key="intercellSpacing" width="3" height="2"/>
                                                             <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -502,8 +541,39 @@
                                         </subviews>
                                     </customView>
                                     <customView fixedFrame="YES" id="mPl-m6-CrT">
-                                        <rect key="frame" x="281" y="0.0" width="619" height="613"/>
+                                        <rect key="frame" x="281" y="0.0" width="619" height="693"/>
                                         <autoresizingMask key="autoresizingMask"/>
+                                        <subviews>
+                                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xsx-jm-Vd6">
+                                                <rect key="frame" x="0.0" y="0.0" width="619" height="654"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <textFieldCell key="cell" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="gzQ-5V-zAF">
+                                                    <font key="font" metaFont="system"/>
+                                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xJ7-zu-Fjh">
+                                                <rect key="frame" x="579" y="655" width="39" height="32"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                                <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSActionTemplate" imagePosition="leading" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yPo-il-FTq">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="showActionMenu:" target="o8E-hg-bCI" id="HoI-3n-Nxm"/>
+                                                </connections>
+                                            </button>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D2W-DV-xY4">
+                                                <rect key="frame" x="11" y="665" width="568" height="16"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" selectable="YES" title="Executable Path" usesSingleLineMode="YES" id="5MX-YY-fyF">
+                                                    <font key="font" metaFont="system"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                        </subviews>
                                     </customView>
                                 </subviews>
                                 <holdingPriorities>
@@ -520,12 +590,45 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="actionMenu" destination="nIz-Nl-3pQ" id="lHz-uv-PJa"/>
+                        <outlet property="detailField" destination="Xsx-jm-Vd6" id="xy7-Qj-xXW"/>
+                        <outlet property="detailPanel" destination="mPl-m6-CrT" id="FrI-dZ-iHt"/>
                         <outlet property="outlineView" destination="SjY-9T-Ht9" id="ipR-6x-ItN"/>
+                        <outlet property="pathField" destination="D2W-DV-xY4" id="1GK-Wf-TsS"/>
                     </connections>
                 </viewController>
                 <customObject id="omk-Jb-ZdZ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <menu id="nIz-Nl-3pQ">
+                    <items>
+                        <menuItem title="Copy to Clipboard" id="R6x-mQ-LD2">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="copyToClipboard:" target="o8E-hg-bCI" id="sns-mj-HQF"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Reveal in Finder" id="hTa-fm-6Gd">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="revealInFinder:" target="o8E-hg-bCI" id="V91-Hg-F2K"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem isSeparatorItem="YES" id="Kq8-3S-0Ad"/>
+                        <menuItem title="Open in IDA.app" identifier="openida" id="Dxa-9W-6Nh">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="openInIDA:" target="o8E-hg-bCI" id="la5-te-gNP"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Open in IDA64.app" identifier="openida64" id="e7B-Nl-2WT">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="openInIDA:" target="o8E-hg-bCI" id="s0M-Nb-IVo"/>
+                            </connections>
+                        </menuItem>
+                    </items>
+                </menu>
             </objects>
-            <point key="canvasLocation" x="1001" y="1079.5"/>
+            <point key="canvasLocation" x="1014" y="536.5"/>
         </scene>
         <!--Network-->
         <scene sceneID="hzo-Sq-WtS">
@@ -540,6 +643,35 @@
             </objects>
             <point key="canvasLocation" x="2163.5" y="773"/>
         </scene>
+        <!--Tab View Controller-->
+        <scene sceneID="2sa-SX-azD">
+            <objects>
+                <tabViewController selectedTabViewItemIndex="0" tabStyle="unspecified" id="jzg-UU-sVq" sceneMemberID="viewController">
+                    <tabViewItems>
+                        <tabViewItem id="9YT-NB-cgx"/>
+                        <tabViewItem id="Hth-fa-KCL"/>
+                        <tabViewItem id="4Pc-aI-Aj7"/>
+                    </tabViewItems>
+                    <viewControllerTransitionOptions key="transitionOptions"/>
+                    <tabView key="tabView" type="noTabsNoBorder" id="Q2W-ie-Be1">
+                        <rect key="frame" x="-188" y="-264" width="1218" height="758"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <font key="font" metaFont="message"/>
+                        <connections>
+                            <outlet property="delegate" destination="jzg-UU-sVq" id="VkE-cR-9Gh"/>
+                        </connections>
+                    </tabView>
+                    <connections>
+                        <outlet property="tabView" destination="Q2W-ie-Be1" id="gEK-To-IkS"/>
+                        <segue destination="o8E-hg-bCI" kind="relationship" relationship="tabItems" id="fd5-6a-six"/>
+                        <segue destination="r7y-sE-Oa8" kind="relationship" relationship="tabItems" id="Mmk-BP-VWN"/>
+                        <segue destination="VpG-Rt-cQU" kind="relationship" relationship="tabItems" id="gap-s5-hWa"/>
+                    </connections>
+                </tabViewController>
+                <customObject id="jE2-XA-LsN" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2330" y="-1019"/>
+        </scene>
         <!--URL-->
         <scene sceneID="VPJ-KZ-upd">
             <objects>
@@ -551,10 +683,13 @@
                 </viewController>
                 <customObject id="pm6-Pq-HH3" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2138" y="-154"/>
+            <point key="canvasLocation" x="2138" y="-154.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>
+        <image name="NSAdvanced" width="32" height="32"/>
+        <image name="NSApplicationIcon" width="32" height="32"/>
+        <image name="NSNetwork" width="32" height="32"/>
     </resources>
 </document>

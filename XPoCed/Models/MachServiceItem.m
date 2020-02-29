@@ -48,4 +48,13 @@
     return [services count] > 0;
 }
 
+- (NSString*)path {
+    if (self.isGroup) return nil;
+    if (!info) return nil;
+    if (info[@"Program"]) return info[@"Program"];
+    NSArray *args = info[@"ProgramArguments"];
+    if (!args) return nil;
+    return args.firstObject;
+}
+
 @end

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA550BCB2409461C0026FCD8 /* CenteredTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA550BCA2409461C0026FCD8 /* CenteredTabViewController.m */; };
 		AA550BD624094E910026FCD8 /* MachServices.m in Sources */ = {isa = PBXBuildFile; fileRef = AA550BD524094E910026FCD8 /* MachServices.m */; };
 		AA550BDA240951370026FCD8 /* MachServiceItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AA550BD9240951370026FCD8 /* MachServiceItem.m */; };
 		AA550BDF2409572C0026FCD8 /* ServicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA550BDE2409572C0026FCD8 /* ServicesViewController.m */; };
@@ -15,11 +14,10 @@
 		AA5FBFC024091ACE00EEF195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA5FBFBF24091ACE00EEF195 /* Assets.xcassets */; };
 		AA5FBFC324091ACE00EEF195 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA5FBFC124091ACE00EEF195 /* Main.storyboard */; };
 		AA5FBFC624091ACE00EEF195 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5FBFC524091ACE00EEF195 /* main.m */; };
+		AAAE3C73240975CF00AC2CDB /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE3C72240975CF00AC2CDB /* WindowController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AA550BC92409461C0026FCD8 /* CenteredTabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CenteredTabViewController.h; sourceTree = "<group>"; };
-		AA550BCA2409461C0026FCD8 /* CenteredTabViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CenteredTabViewController.m; sourceTree = "<group>"; };
 		AA550BD424094E910026FCD8 /* MachServices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MachServices.h; sourceTree = "<group>"; };
 		AA550BD524094E910026FCD8 /* MachServices.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MachServices.m; sourceTree = "<group>"; };
 		AA550BD8240951370026FCD8 /* MachServiceItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MachServiceItem.h; sourceTree = "<group>"; };
@@ -34,6 +32,8 @@
 		AA5FBFC424091ACE00EEF195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA5FBFC524091ACE00EEF195 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AA5FBFC724091ACE00EEF195 /* XPoCed.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XPoCed.entitlements; sourceTree = "<group>"; };
+		AAAE3C71240975CF00AC2CDB /* WindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WindowController.h; sourceTree = "<group>"; };
+		AAAE3C72240975CF00AC2CDB /* WindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WindowController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,15 +47,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AA550BCD24094D910026FCD8 /* Core Additions */ = {
-			isa = PBXGroup;
-			children = (
-				AA550BC92409461C0026FCD8 /* CenteredTabViewController.h */,
-				AA550BCA2409461C0026FCD8 /* CenteredTabViewController.m */,
-			);
-			path = "Core Additions";
-			sourceTree = "<group>";
-		};
 		AA550BCE24094E620026FCD8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +70,8 @@
 			children = (
 				AA550BDD2409572C0026FCD8 /* ServicesViewController.h */,
 				AA550BDE2409572C0026FCD8 /* ServicesViewController.m */,
+				AAAE3C71240975CF00AC2CDB /* WindowController.h */,
+				AAAE3C72240975CF00AC2CDB /* WindowController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -105,7 +98,6 @@
 				AA550BE0240957F30026FCD8 /* Controllers */,
 				AA550BD7240951200026FCD8 /* Models */,
 				AA550BCE24094E620026FCD8 /* Services */,
-				AA550BCD24094D910026FCD8 /* Core Additions */,
 				AA5FBFCD24091CD200EEF195 /* Views */,
 				AA5FBFB924091ACD00EEF195 /* AppDelegate.h */,
 				AA5FBFBA24091ACD00EEF195 /* AppDelegate.m */,
@@ -195,8 +187,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA550BDF2409572C0026FCD8 /* ServicesViewController.m in Sources */,
+				AAAE3C73240975CF00AC2CDB /* WindowController.m in Sources */,
 				AA550BDA240951370026FCD8 /* MachServiceItem.m in Sources */,
-				AA550BCB2409461C0026FCD8 /* CenteredTabViewController.m in Sources */,
 				AA550BD624094E910026FCD8 /* MachServices.m in Sources */,
 				AA5FBFC624091ACE00EEF195 /* main.m in Sources */,
 				AA5FBFBB24091ACD00EEF195 /* AppDelegate.m in Sources */,
