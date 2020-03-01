@@ -19,9 +19,9 @@
     MachServiceItem *group = [MachServiceItem new];
     group.identifier = name;
     
-    NSUInteger domain = kSystemDomain;
+    NSUInteger domain = kSystemServices;
     if ([name isEqualToString:@"User"]) {
-        domain = kUserDomain;
+        domain = kUserServices;
     } else if (![name isEqualToString:@"System"]) {
         @throw [NSException exceptionWithName:@"InvalidArgument" reason:@"Unknown domain" userInfo:nil];
     }
