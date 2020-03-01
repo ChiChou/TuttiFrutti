@@ -15,7 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ServicesViewController : NSViewController <NSOutlineViewDelegate, NSOutlineViewDataSource>
 
 @property (atomic, retain) NSMutableArray<MachServiceItem*>*dataSource;
-@property (atomic, retain) NSArray<MachServiceItem *> *tree;
 
 @end
 
