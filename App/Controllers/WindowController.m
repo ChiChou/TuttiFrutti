@@ -21,12 +21,11 @@
 - (void)windowWillLoad {
     self.search.delegate = self;
     self.featureSwitch.selectedSegment = 0;
-    
-
 }
 
 - (void)search:(NSString*)query {
     // todo: filter
+    
 }
 
 - (void)controlTextDidChange:(NSNotification *)notification {

@@ -10,6 +10,8 @@
 		AA04180E240A22E900EDAAEC /* ClassDumper.m in Sources */ = {isa = PBXBuildFile; fileRef = AA04180D240A22E900EDAAEC /* ClassDumper.m */; };
 		AA041810240A22E900EDAAEC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA04180F240A22E900EDAAEC /* main.m */; };
 		AA041814240A22E900EDAAEC /* ClassDumper.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = AA041809240A22E900EDAAEC /* ClassDumper.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AA0EB0DE240B9D0500F51DD8 /* URLItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0EB0DD240B9D0500F51DD8 /* URLItem.m */; };
+		AA0EB0E1240B9DC300F51DD8 /* URLSchemesController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0EB0E0240B9DC300F51DD8 /* URLSchemesController.m */; };
 		AA45F83B240A9B1300846A36 /* ClassDumpOutlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA45F83A240A9B1300846A36 /* ClassDumpOutlineView.m */; };
 		AA45F83E240A9D2200846A36 /* ClassDumpItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AA45F83D240A9D2200846A36 /* ClassDumpItem.m */; };
 		AA45F83F240A9EFE00846A36 /* DumpResult.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB22254240A6B8000FA1237 /* DumpResult.m */; };
@@ -23,6 +25,7 @@
 		AA5FBFC324091ACE00EEF195 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA5FBFC124091ACE00EEF195 /* Main.storyboard */; };
 		AA5FBFC624091ACE00EEF195 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5FBFC524091ACE00EEF195 /* main.m */; };
 		AAAE3C73240975CF00AC2CDB /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAE3C72240975CF00AC2CDB /* WindowController.m */; };
+		AAB13C8F240BB9DD00739BF6 /* CodeSignChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB13C8E240BB9DD00739BF6 /* CodeSignChecker.m */; };
 		AAB2224F240A296A00FA1237 /* NaiveClassDump.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB2224E240A296A00FA1237 /* NaiveClassDump.m */; };
 		AAB22255240A6B8000FA1237 /* DumpResult.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB22254240A6B8000FA1237 /* DumpResult.m */; };
 /* End PBXBuildFile section */
@@ -58,6 +61,10 @@
 		AA04180D240A22E900EDAAEC /* ClassDumper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassDumper.m; sourceTree = "<group>"; };
 		AA04180F240A22E900EDAAEC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AA041811240A22E900EDAAEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA0EB0DC240B9D0500F51DD8 /* URLItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLItem.h; sourceTree = "<group>"; };
+		AA0EB0DD240B9D0500F51DD8 /* URLItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URLItem.m; sourceTree = "<group>"; };
+		AA0EB0DF240B9DC300F51DD8 /* URLSchemesController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLSchemesController.h; sourceTree = "<group>"; };
+		AA0EB0E0240B9DC300F51DD8 /* URLSchemesController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URLSchemesController.m; sourceTree = "<group>"; };
 		AA45F839240A9B1300846A36 /* ClassDumpOutlineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassDumpOutlineView.h; sourceTree = "<group>"; };
 		AA45F83A240A9B1300846A36 /* ClassDumpOutlineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassDumpOutlineView.m; sourceTree = "<group>"; };
 		AA45F83C240A9D2200846A36 /* ClassDumpItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassDumpItem.h; sourceTree = "<group>"; };
@@ -83,6 +90,8 @@
 		AA5FBFC724091ACE00EEF195 /* app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = app.entitlements; sourceTree = "<group>"; };
 		AAAE3C71240975CF00AC2CDB /* WindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WindowController.h; sourceTree = "<group>"; };
 		AAAE3C72240975CF00AC2CDB /* WindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WindowController.m; sourceTree = "<group>"; };
+		AAB13C8D240BB9DD00739BF6 /* CodeSignChecker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CodeSignChecker.h; sourceTree = "<group>"; };
+		AAB13C8E240BB9DD00739BF6 /* CodeSignChecker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeSignChecker.m; sourceTree = "<group>"; };
 		AAB2224D240A296A00FA1237 /* NaiveClassDump.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NaiveClassDump.h; sourceTree = "<group>"; };
 		AAB2224E240A296A00FA1237 /* NaiveClassDump.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NaiveClassDump.m; sourceTree = "<group>"; };
 		AAB22253240A6B8000FA1237 /* DumpResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DumpResult.h; sourceTree = "<group>"; };
@@ -128,6 +137,8 @@
 				AA45F843240ABE9B00846A36 /* NetBottom.h */,
 				AA45F844240ABE9B00846A36 /* NetBottom.m */,
 				AA45F846240AC17F00846A36 /* NetworkStatistics.h */,
+				AAB13C8D240BB9DD00739BF6 /* CodeSignChecker.h */,
+				AAB13C8E240BB9DD00739BF6 /* CodeSignChecker.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -139,6 +150,8 @@
 				AA550BD9240951370026FCD8 /* MachServiceItem.m */,
 				AA45F83C240A9D2200846A36 /* ClassDumpItem.h */,
 				AA45F83D240A9D2200846A36 /* ClassDumpItem.m */,
+				AA0EB0DC240B9D0500F51DD8 /* URLItem.h */,
+				AA0EB0DD240B9D0500F51DD8 /* URLItem.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -152,6 +165,8 @@
 				AA45F83A240A9B1300846A36 /* ClassDumpOutlineView.m */,
 				AAAE3C71240975CF00AC2CDB /* WindowController.h */,
 				AAAE3C72240975CF00AC2CDB /* WindowController.m */,
+				AA0EB0DF240B9DC300F51DD8 /* URLSchemesController.h */,
+				AA0EB0E0240B9DC300F51DD8 /* URLSchemesController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -325,8 +340,11 @@
 				AA550BDF2409572C0026FCD8 /* ServicesViewController.m in Sources */,
 				AA45F845240ABE9B00846A36 /* NetBottom.m in Sources */,
 				AAAE3C73240975CF00AC2CDB /* WindowController.m in Sources */,
+				AA0EB0DE240B9D0500F51DD8 /* URLItem.m in Sources */,
 				AA550BDA240951370026FCD8 /* MachServiceItem.m in Sources */,
+				AAB13C8F240BB9DD00739BF6 /* CodeSignChecker.m in Sources */,
 				AA550BD624094E910026FCD8 /* MachServices.m in Sources */,
+				AA0EB0E1240B9DC300F51DD8 /* URLSchemesController.m in Sources */,
 				AA45F83B240A9B1300846A36 /* ClassDumpOutlineView.m in Sources */,
 				AAB2224F240A296A00FA1237 /* NaiveClassDump.m in Sources */,
 				AA45F83E240A9D2200846A36 /* ClassDumpItem.m in Sources */,

@@ -7,10 +7,14 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "URLItem.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface URLSchemesController : NSViewController
+
+@interface URLSchemesController : NSViewController <NSOutlineViewDelegate, NSOutlineViewDataSource>
+
+@property (atomic, retain) NSArray<URLItem*>*data;
 
 @end
 
