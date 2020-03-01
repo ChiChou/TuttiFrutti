@@ -1,11 +1,13 @@
 //
-//  Magic.m
+//  NetBottom.m
 //  TuttiFrutti
 //
 //  Created by CodeColorist on 2020/2/29.
 //  Copyright © 2020 me.chichou. All rights reserved.
 //
 
-#import "Magic.h"
+#import "NetBottom.h"
 
-NSString *const kNotificationClassDumpLoading = @"NotificationClassDumpLoading";
+@implementation NetBottom
+
+@end
