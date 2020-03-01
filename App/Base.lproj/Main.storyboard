@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="Vrt-iE-UGJ">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,7 +23,7 @@
                                 <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="tPg-NT-bbP"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="cbd-Mi-9kT"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="wL5-Ey-6kL"/>
-                                <toolbarItem implicitItemIdentifier="04446D8F-80C2-4E8F-8088-7716B5A1FAA0" label="Custom View" paletteLabel="Custom View" sizingBehavior="auto" id="3Ew-xB-wMf">
+                                <toolbarItem implicitItemIdentifier="04446D8F-80C2-4E8F-8088-7716B5A1FAA0" label="" paletteLabel="" sizingBehavior="auto" id="3Ew-xB-wMf">
                                     <nil key="toolTip"/>
                                     <searchField key="view" wantsLayer="YES" verticalHuggingPriority="750" textCompletion="NO" id="WI3-1n-MhU">
                                         <rect key="frame" x="0.0" y="14" width="96" height="22"/>
@@ -34,17 +35,17 @@
                                         </searchFieldCell>
                                     </searchField>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="C6C60813-6B98-41CC-9F9A-AAA12B4F8229" label="Custom View" paletteLabel="Custom View" sizingBehavior="auto" id="cyG-xO-PfD">
+                                <toolbarItem implicitItemIdentifier="C6C60813-6B98-41CC-9F9A-AAA12B4F8229" label="" paletteLabel="" sizingBehavior="auto" id="cyG-xO-PfD">
                                     <nil key="toolTip"/>
                                     <segmentedControl key="view" verticalHuggingPriority="750" id="VTC-6t-fzw">
-                                        <rect key="frame" x="0.0" y="14" width="317" height="24"/>
+                                        <rect key="frame" x="0.0" y="14" width="239" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="selectOne" id="2yZ-0v-sUC">
                                             <font key="font" metaFont="system"/>
                                             <segments>
-                                                <segment label="Services" image="NSAdvanced"/>
-                                                <segment label="Network" image="NSNetwork" selected="YES" tag="1"/>
-                                                <segment label="Schemes" image="NSIconViewTemplate"/>
+                                                <segment label="Services"/>
+                                                <segment label="Network" selected="YES" tag="1"/>
+                                                <segment label="Schemes"/>
                                             </segments>
                                         </segmentedCell>
                                         <connections>
@@ -396,9 +397,6 @@
                                     </items>
                                 </menu>
                             </menuItem>
-                            <menuItem title="Action" id="dH8-vG-Q03">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                            </menuItem>
                             <menuItem title="Help" id="wpr-3q-Mcd">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
@@ -432,21 +430,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <splitView arrangesAllSubviews="NO" dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UbM-G6-HPz">
-                                <rect key="frame" x="0.0" y="0.0" width="900" height="692"/>
+                                <rect key="frame" x="0.0" y="0.0" width="900" height="693"/>
                                 <subviews>
                                     <customView fixedFrame="YES" id="3Ci-UW-HvC">
-                                        <rect key="frame" x="0.0" y="0.0" width="271" height="692"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="271" height="693"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
                                             <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9hC-o2-JCi">
-                                                <rect key="frame" x="0.0" y="0.0" width="271" height="692"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="271" height="693"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <clipView key="contentView" drawsBackground="NO" id="KPa-4D-lkO">
-                                                    <rect key="frame" x="1" y="1" width="269" height="690"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <rect key="frame" x="1" y="1" width="269" height="691"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="mn1-2d-VRT" id="SjY-9T-Ht9">
-                                                            <rect key="frame" x="0.0" y="0.0" width="269" height="690"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="269" height="691"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <size key="intercellSpacing" width="3" height="2"/>
                                                             <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -540,11 +538,11 @@
                                         </subviews>
                                     </customView>
                                     <customView fixedFrame="YES" id="mPl-m6-CrT">
-                                        <rect key="frame" x="281" y="0.0" width="619" height="692"/>
+                                        <rect key="frame" x="281" y="0.0" width="619" height="693"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D2W-DV-xY4">
-                                                <rect key="frame" x="11" y="664" width="562" height="16"/>
+                                                <rect key="frame" x="11" y="665" width="537" height="16"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                 <textFieldCell key="cell" lineBreakMode="clipping" selectable="YES" title="Executable Path" usesSingleLineMode="YES" id="5MX-YY-fyF">
                                                     <font key="font" metaFont="system"/>
@@ -553,7 +551,7 @@
                                                 </textFieldCell>
                                             </textField>
                                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MFq-6u-goa">
-                                                <rect key="frame" x="13" y="373" width="593" height="280"/>
+                                                <rect key="frame" x="13" y="374" width="593" height="280"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                 <textFieldCell key="cell" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="0EV-Eh-xBM">
                                                     <font key="font" metaFont="system"/>
@@ -562,7 +560,7 @@
                                                 </textFieldCell>
                                             </textField>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jVW-jm-fxL">
-                                                <rect key="frame" x="11" y="338" width="129" height="16"/>
+                                                <rect key="frame" x="11" y="339" width="129" height="16"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Runtime class-dump" id="Fle-1s-Ah1">
                                                     <font key="font" metaFont="system"/>
@@ -571,14 +569,14 @@
                                                 </textFieldCell>
                                             </textField>
                                             <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Scr-G4-lje">
-                                                <rect key="frame" x="13" y="17" width="593" height="313"/>
+                                                <rect key="frame" x="13" y="17" width="593" height="314"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="acq-eY-Pt7">
-                                                    <rect key="frame" x="1" y="1" width="591" height="311"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <rect key="frame" x="1" y="1" width="591" height="312"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <outlineView verticalHuggingPriority="750" ambiguous="YES" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="ESo-Ud-Koo" id="dhw-Bh-o0i" customClass="ClassDumpOutlineView">
-                                                            <rect key="frame" x="0.0" y="0.0" width="591" height="311"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="591" height="312"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <size key="intercellSpacing" width="3" height="2"/>
                                                             <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -655,21 +653,50 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </scroller>
                                             </scrollView>
-                                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xJ7-zu-Fjh">
-                                                <rect key="frame" x="573" y="654" width="39" height="32"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                                <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSActionTemplate" imagePosition="leading" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yPo-il-FTq">
-                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" metaFont="system"/>
-                                                </buttonCell>
-                                                <connections>
-                                                    <action selector="showActionMenu:" target="o8E-hg-bCI" id="HoI-3n-Nxm"/>
-                                                </connections>
-                                            </button>
                                             <progressIndicator wantsLayer="YES" fixedFrame="YES" maxValue="100" indeterminate="YES" controlSize="small" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="xVQ-EF-Kg1">
-                                                <rect key="frame" x="482" y="338" width="124" height="12"/>
+                                                <rect key="frame" x="482" y="339" width="124" height="12"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                             </progressIndicator>
+                                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zw2-Rv-OWi">
+                                                <rect key="frame" x="554" y="661" width="52" height="23"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                                <popUpButtonCell key="cell" type="roundTextured" title="Service Actions" bezelStyle="texturedRounded" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" inset="2" pullsDown="YES" arrowPosition="noArrow" id="GjO-9L-Llt">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                    <menu key="menu" id="mK6-pT-aaf">
+                                                        <items>
+                                                            <menuItem title="Service Actions" image="NSShareTemplate" hidden="YES" id="T7y-a4-kDq">
+                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                            </menuItem>
+                                                            <menuItem title="Copy to Clipboard" id="R6x-mQ-LD2">
+                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                <connections>
+                                                                    <action selector="copyToClipboard:" target="o8E-hg-bCI" id="sns-mj-HQF"/>
+                                                                </connections>
+                                                            </menuItem>
+                                                            <menuItem title="Reveal in Finder" id="hTa-fm-6Gd">
+                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                <connections>
+                                                                    <action selector="revealInFinder:" target="o8E-hg-bCI" id="V91-Hg-F2K"/>
+                                                                </connections>
+                                                            </menuItem>
+                                                            <menuItem isSeparatorItem="YES" id="Kq8-3S-0Ad"/>
+                                                            <menuItem title="Open in IDA.app" identifier="openida" id="Dxa-9W-6Nh">
+                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                <connections>
+                                                                    <action selector="openInIDA:" target="o8E-hg-bCI" id="la5-te-gNP"/>
+                                                                </connections>
+                                                            </menuItem>
+                                                            <menuItem title="Open in IDA64.app" identifier="openida64" id="e7B-Nl-2WT">
+                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                <connections>
+                                                                    <action selector="openInIDA:" target="o8E-hg-bCI" id="s0M-Nb-IVo"/>
+                                                                </connections>
+                                                            </menuItem>
+                                                        </items>
+                                                    </menu>
+                                                </popUpButtonCell>
+                                            </popUpButton>
                                         </subviews>
                                     </customView>
                                 </subviews>
@@ -697,35 +724,7 @@
                     </connections>
                 </viewController>
                 <customObject id="omk-Jb-ZdZ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <menu id="nIz-Nl-3pQ">
-                    <items>
-                        <menuItem title="Copy to Clipboard" id="R6x-mQ-LD2">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                            <connections>
-                                <action selector="copyToClipboard:" target="o8E-hg-bCI" id="sns-mj-HQF"/>
-                            </connections>
-                        </menuItem>
-                        <menuItem title="Reveal in Finder" id="hTa-fm-6Gd">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                            <connections>
-                                <action selector="revealInFinder:" target="o8E-hg-bCI" id="V91-Hg-F2K"/>
-                            </connections>
-                        </menuItem>
-                        <menuItem isSeparatorItem="YES" id="Kq8-3S-0Ad"/>
-                        <menuItem title="Open in IDA.app" identifier="openida" id="Dxa-9W-6Nh">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                            <connections>
-                                <action selector="openInIDA:" target="o8E-hg-bCI" id="la5-te-gNP"/>
-                            </connections>
-                        </menuItem>
-                        <menuItem title="Open in IDA64.app" identifier="openida64" id="e7B-Nl-2WT">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                            <connections>
-                                <action selector="openInIDA:" target="o8E-hg-bCI" id="s0M-Nb-IVo"/>
-                            </connections>
-                        </menuItem>
-                    </items>
-                </menu>
+                <menu id="nIz-Nl-3pQ"/>
             </objects>
             <point key="canvasLocation" x="1014" y="536.5"/>
         </scene>
@@ -774,7 +773,7 @@
         <!--URL-->
         <scene sceneID="VPJ-KZ-upd">
             <objects>
-                <viewController title="URL" id="r7y-sE-Oa8" sceneMemberID="viewController">
+                <viewController title="URL" id="r7y-sE-Oa8" customClass="URLSchemesController" sceneMemberID="viewController">
                     <view key="view" id="1Gw-uu-bNB">
                         <rect key="frame" x="0.0" y="0.0" width="916" height="663"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -787,8 +786,6 @@
     </scenes>
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>
-        <image name="NSAdvanced" width="32" height="32"/>
-        <image name="NSIconViewTemplate" width="14" height="10"/>
-        <image name="NSNetwork" width="32" height="32"/>
+        <image name="NSShareTemplate" width="11" height="16"/>
     </resources>
 </document>
