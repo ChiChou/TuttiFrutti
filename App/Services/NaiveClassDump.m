@@ -24,12 +24,8 @@
     self = [super init];
     if (self) {
         self.connection = [[NSXPCConnection alloc] initWithServiceName:@"me.chichou.ClassDumper"];
-        self.connection.invalidationHandler = ^{
-            
-        };
-        self.connection.interruptionHandler = ^{
-            
-        };
+        self.connection.invalidationHandler = ^{};
+        self.connection.interruptionHandler = ^{};
         self.connection.remoteObjectInterface = [NSXPCInterface interfaceWithProtocol:@protocol(ClassDumperProtocol)];
         [self.connection resume];
     }

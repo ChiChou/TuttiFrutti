@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)dumpFor:(NSURL *)path withReply:(void (^)(NSError *err, DumpResult*))reply;
 
-+ (id)shared;
++ (instancetype)shared;
 @end
 
 NS_ASSUME_NONNULL_END
