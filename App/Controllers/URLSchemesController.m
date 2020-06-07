@@ -16,6 +16,7 @@ static NSSet *safariAllowes = nil;
     BOOL safariReachable;
 }
 
+@property (weak) IBOutlet NSProgressIndicator *indicator;
 @property (weak) IBOutlet NSOutlineView *outlineView;
 @end
 
@@ -66,6 +67,9 @@ static NSSet *safariAllowes = nil;
 }
 
 - (void)refresh {
+  self.indicator.hidden = NO;
+  [self.indicator startAnimation:nil];
+
   self.data = @[];
   [self.outlineView reloadData];
   [self performSelectorInBackground:@selector(fetch) withObject:nil];
@@ -101,6 +105,9 @@ static NSSet *safariAllowes = nil;
 }
 
 - (void)update:(NSArray *)data {
+  [self.indicator stopAnimation:nil];
+  self.indicator.hidden = YES;
+
   self.data = data;
   [self.outlineView reloadData];
   for (id node in self.data) {
@@ -120,8 +127,7 @@ static NSSet *safariAllowes = nil;
     return YES;
 }
 
-- (id)outlineView:(NSOutlineView *)outlineView child:(NSInteger)index ofItem:(id)item
-{
+- (id)outlineView:(NSOutlineView *)outlineView child:(NSInteger)index ofItem:(id)item {
     if (item == nil) {
         return [self.data objectAtIndex:index];
     } else {

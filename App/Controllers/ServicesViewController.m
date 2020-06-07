@@ -43,6 +43,11 @@
     if ([notification.name isEqualToString:kNotificationClassDumpLoading]) {
         NSNumber* status = notification.object;
         _classdumpIndicator.hidden = !status.boolValue;
+        if (_classdumpIndicator.hidden) {
+            [_classdumpIndicator stopAnimation:nil];
+        } else {
+            [_classdumpIndicator startAnimation:nil];
+        }
     }
 }
 

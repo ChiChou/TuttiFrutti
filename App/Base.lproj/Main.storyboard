@@ -863,20 +863,8 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2aB-lG-u2V">
-                                <rect key="frame" x="122" y="640" width="125" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Trusted by Safari" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="zsY-iZ-nbD">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="onToggleSwitches:" target="r7y-sE-Oa8" id="VcD-VI-LJv"/>
-                                    <binding destination="r7y-sE-Oa8" name="value" keyPath="self.safariReachable" id="7Ip-sI-5Og"/>
-                                </connections>
-                            </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qo4-yf-SH9">
-                                <rect key="frame" x="18" y="640" width="89" height="18"/>
+                                <rect key="frame" x="18" y="636" width="89" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="check" title="Apple Only" bezelStyle="regularSquare" imagePosition="left" inset="2" id="VJA-4C-cU0">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -887,9 +875,26 @@
                                     <binding destination="r7y-sE-Oa8" name="value" keyPath="self.appleOnly" id="S1Q-F7-8u3"/>
                                 </connections>
                             </button>
+                            <progressIndicator wantsLayer="YES" fixedFrame="YES" maxValue="100" indeterminate="YES" controlSize="small" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="CS1-QQ-Bmw">
+                                <rect key="frame" x="711" y="637" width="196" height="12"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                            </progressIndicator>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2aB-lG-u2V">
+                                <rect key="frame" x="122" y="636" width="125" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="Trusted by Safari" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="zsY-iZ-nbD">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="onToggleSwitches:" target="r7y-sE-Oa8" id="VcD-VI-LJv"/>
+                                    <binding destination="r7y-sE-Oa8" name="value" keyPath="self.safariReachable" id="7Ip-sI-5Og"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="indicator" destination="CS1-QQ-Bmw" id="1gR-mt-zTB"/>
                         <outlet property="outlineView" destination="QAe-Vy-DnS" id="QwR-CF-ykj"/>
                     </connections>
                 </viewController>
