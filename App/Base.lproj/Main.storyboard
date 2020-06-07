@@ -23,8 +23,10 @@
                                 <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="tPg-NT-bbP"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="cbd-Mi-9kT"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="wL5-Ey-6kL"/>
-                                <toolbarItem implicitItemIdentifier="04446D8F-80C2-4E8F-8088-7716B5A1FAA0" label="" paletteLabel="" sizingBehavior="auto" id="3Ew-xB-wMf">
+                                <toolbarItem implicitItemIdentifier="04446D8F-80C2-4E8F-8088-7716B5A1FAA0" label="" paletteLabel="" id="3Ew-xB-wMf">
                                     <nil key="toolTip"/>
+                                    <size key="minSize" width="96" height="22"/>
+                                    <size key="maxSize" width="120" height="22"/>
                                     <searchField key="view" wantsLayer="YES" verticalHuggingPriority="750" textCompletion="NO" id="WI3-1n-MhU">
                                         <rect key="frame" x="0.0" y="14" width="96" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -777,14 +779,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLq-n0-W2U">
-                                <rect key="frame" x="0.0" y="0.0" width="916" height="663"/>
+                                <rect key="frame" x="0.0" y="0.0" width="916" height="629"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="xa0-zs-7BD">
-                                    <rect key="frame" x="1" y="1" width="914" height="661"/>
+                                    <rect key="frame" x="1" y="1" width="914" height="627"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <outlineView verticalHuggingPriority="750" ambiguous="YES" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="j4c-k1-TJw" id="QAe-Vy-DnS">
-                                            <rect key="frame" x="0.0" y="0.0" width="914" height="661"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="914" height="627"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -861,6 +863,22 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2aB-lG-u2V">
+                                <rect key="frame" x="122" y="640" width="125" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="Trusted by Safari" bezelStyle="regularSquare" imagePosition="left" inset="2" id="zsY-iZ-nbD">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qo4-yf-SH9">
+                                <rect key="frame" x="18" y="640" width="89" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="Apple Only" bezelStyle="regularSquare" imagePosition="left" inset="2" id="VJA-4C-cU0">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
                         </subviews>
                     </view>
                     <connections>

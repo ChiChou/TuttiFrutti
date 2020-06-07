@@ -8,6 +8,8 @@
 
 #import "URLSchemesController.h"
 
+static NSArray *safariAllowes = nil;
+
 @interface URLSchemesController ()
 @property (weak) IBOutlet NSOutlineView *outlineView;
 @end
@@ -18,8 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    static NSArray *safariAllowes = nil;
+
+    // urlSchemesToOpenWithoutPrompting()::whitelistedURLSchemes
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         safariAllowes = @[
