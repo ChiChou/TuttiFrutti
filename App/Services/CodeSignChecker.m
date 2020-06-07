@@ -39,7 +39,7 @@ static SecRequirementRef isAppStore = nil;
     if (errSecSuccess != status)
         return NO;
 
-    int flags = kSecCSConsiderExpiration | kSecCSEnforceRevocationChecks | kSecCSCheckTrustedAnchors;
+    int flags = kSecCSDefaultFlags | kSecCSCheckAllArchitectures | kSecCSCheckNestedCode | kSecCSDoNotValidateResources;
     status = SecStaticCodeCheckValidity(code, flags, requirement);
     return errSecSuccess == status;
 }

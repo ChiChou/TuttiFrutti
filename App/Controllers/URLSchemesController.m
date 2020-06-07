@@ -7,10 +7,15 @@
 //
 
 #import "URLSchemesController.h"
+#import "CodeSignChecker.h"
 
-static NSArray *safariAllowes = nil;
+static NSSet *safariAllowes = nil;
 
-@interface URLSchemesController ()
+@interface URLSchemesController() {
+    BOOL appleOnly;
+    BOOL safariReachable;
+}
+
 @property (weak) IBOutlet NSOutlineView *outlineView;
 @end
 
@@ -18,13 +23,18 @@ static NSArray *safariAllowes = nil;
 
 @synthesize data;
 
+- (IBAction)onToggleSwitches:(id)sender {
+  [self refresh];
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     // urlSchemesToOpenWithoutPrompting()::whitelistedURLSchemes
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        safariAllowes = @[
+        safariAllowes = [NSSet setWithArray:@[
           @"x-apple-helpbasic",
           @"itms",
           @"rdar",
@@ -46,16 +56,56 @@ static NSArray *safariAllowes = nil;
           @"st",
           @"itunes",
           @"x-radar"
-        ];
+        ]];
     });
-    
-    self.data = [URLItem allURLs];
+  
     self.outlineView.delegate = self;
     self.outlineView.dataSource = self;
-    
-    for (id node in self.data) {
-        [self.outlineView expandItem:node expandChildren:NO];
-    }
+  
+    [self refresh];
+}
+
+- (void)refresh {
+  self.data = @[];
+  [self.outlineView reloadData];
+  [self performSelectorInBackground:@selector(fetch) withObject:nil];
+}
+
+- (void)fetch {
+  NSArray<URLItem*> *result = [URLItem allURLs];
+
+  if (safariReachable) {
+    result = [result filteredArrayUsingPredicate:
+                         [NSPredicate predicateWithBlock:
+                          ^BOOL(URLItem *item, NSDictionary<NSString *,id> * _Nullable bindings) {
+      return [safariAllowes containsObject:item.identifier];
+    }]];
+  }
+
+  if (appleOnly) {
+    result = [result filteredArrayUsingPredicate:
+                         [NSPredicate predicateWithBlock:
+                          ^BOOL(URLItem *group, NSDictionary<NSString *,id> * _Nullable bindings) {
+      group.children = [group.children filteredArrayUsingPredicate:
+                        [NSPredicate predicateWithBlock:
+                         ^BOOL(URLItem *item, NSDictionary<NSString *,id> * _Nullable bindings) {
+        return [[CodeSignChecker shared] isApple:item.path];
+      }]];
+      
+      return group.children.count > 0;
+    }]];
+  }
+  
+  // todo: keyword
+  [self performSelectorOnMainThread:@selector(update:) withObject:result waitUntilDone:NO];
+}
+
+- (void)update:(NSArray *)data {
+  self.data = data;
+  [self.outlineView reloadData];
+  for (id node in self.data) {
+      [self.outlineView expandItem:node expandChildren:NO];
+  }
 }
 
 - (BOOL)outlineView:(NSOutlineView *)outlineView isGroupItem:(URLItem *)item {

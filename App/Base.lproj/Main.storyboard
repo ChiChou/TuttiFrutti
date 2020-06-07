@@ -806,11 +806,11 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="HeaderCell" id="YgW-PR-pX4">
-                                                            <rect key="frame" x="1" y="1" width="871" height="17"/>
+                                                            <rect key="frame" x="1" y="1" width="911" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XuL-Hq-i62">
-                                                                    <rect key="frame" x="0.0" y="1" width="871" height="14"/>
+                                                                    <rect key="frame" x="0.0" y="1" width="911" height="14"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="HEADER CELL" id="y7Q-wX-FUZ">
                                                                         <font key="font" metaFont="smallSystemBold"/>
@@ -824,7 +824,7 @@
                                                             </connections>
                                                         </tableCellView>
                                                         <tableCellView identifier="DataCell" id="Qdl-7G-jfC">
-                                                            <rect key="frame" x="1" y="20" width="871" height="17"/>
+                                                            <rect key="frame" x="1" y="20" width="911" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fdB-p3-b5E">
@@ -833,7 +833,7 @@
                                                                     <imageCell key="cell" refusesFirstResponder="YES" imageScaling="proportionallyDown" image="NSActionTemplate" id="41F-Z4-IhJ"/>
                                                                 </imageView>
                                                                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dzk-Cw-loH">
-                                                                    <rect key="frame" x="25" y="0.0" width="846" height="17"/>
+                                                                    <rect key="frame" x="25" y="0.0" width="886" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="ZZM-qS-6CV">
                                                                         <font key="font" metaFont="system"/>
@@ -866,10 +866,14 @@
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2aB-lG-u2V">
                                 <rect key="frame" x="122" y="640" width="125" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="check" title="Trusted by Safari" bezelStyle="regularSquare" imagePosition="left" inset="2" id="zsY-iZ-nbD">
+                                <buttonCell key="cell" type="check" title="Trusted by Safari" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="zsY-iZ-nbD">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="onToggleSwitches:" target="r7y-sE-Oa8" id="VcD-VI-LJv"/>
+                                    <binding destination="r7y-sE-Oa8" name="value" keyPath="self.safariReachable" id="7Ip-sI-5Og"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qo4-yf-SH9">
                                 <rect key="frame" x="18" y="640" width="89" height="18"/>
@@ -878,6 +882,10 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="onToggleSwitches:" target="r7y-sE-Oa8" id="Fwo-vj-N2G"/>
+                                    <binding destination="r7y-sE-Oa8" name="value" keyPath="self.appleOnly" id="S1Q-F7-8u3"/>
+                                </connections>
                             </button>
                         </subviews>
                     </view>
@@ -886,6 +894,7 @@
                     </connections>
                 </viewController>
                 <customObject id="pm6-Pq-HH3" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="TAz-LY-hME"/>
             </objects>
             <point key="canvasLocation" x="2138" y="-154.5"/>
         </scene>

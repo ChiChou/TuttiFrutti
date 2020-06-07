@@ -37,10 +37,6 @@ extern OSStatus _LSCopyAllApplicationURLs(CFArrayRef *theList);
 }
 
 + (NSArray<URLItem *>*)allURLs {
-    return [URLItem allURLsWithFilter:nil appleOnly:NO];
-}
-
-+ (NSArray<URLItem *>*)allURLsWithFilter:(NSString *)keyword appleOnly:(BOOL)appleOnly {
     CFArrayRef schemes = NULL;
     CFArrayRef apps = NULL;
 
@@ -49,10 +45,7 @@ extern OSStatus _LSCopyAllApplicationURLs(CFArrayRef *theList);
     
     for (CFIndex i = 0, count = CFArrayGetCount(schemes); i < count; i++) {
         CFStringRef scheme = CFArrayGetValueAtIndex(schemes, i);
-        if (keyword && [(__bridge NSString*)scheme rangeOfString:keyword options:NSCaseInsensitiveSearch].location == NSNotFound)
-            continue;
-        
-        URLItem *child = [URLItem groupWithScheme:scheme appleOnly:appleOnly];
+        URLItem *child = [URLItem groupWithScheme:scheme];
         if (child.children.count)
             [list addObject:child];
     }
@@ -64,10 +57,6 @@ extern OSStatus _LSCopyAllApplicationURLs(CFArrayRef *theList);
 }
 
 + (instancetype)groupWithScheme:(CFStringRef)scheme {
-    return [URLItem groupWithScheme:scheme appleOnly:NO];
-}
-
-+ (instancetype)groupWithScheme:(CFStringRef)scheme appleOnly:(BOOL)appleOnly {
     URLItem *instance = [[URLItem alloc] init];
     instance.type = kURLItemSchemeGroup;
     instance.identifier = (__bridge NSString *)scheme;
@@ -81,14 +70,8 @@ extern OSStatus _LSCopyAllApplicationURLs(CFArrayRef *theList);
 
     for (CFIndex j = 0, bundle_count = CFArrayGetCount(handlers); j < bundle_count; j++) {
         CFStringRef handler = CFArrayGetValueAtIndex(handlers, j);
-        if (appleOnly) {
-            NSString *path = [[NSWorkspace sharedWorkspace]
-                              absolutePathForAppBundleWithIdentifier:(__bridge NSString *)handler];
-            if (![[CodeSignChecker shared] isApple:[NSURL fileURLWithPath:path]])
-                continue;
-        }
-
         URLItem *child = [URLItem appItemWithBundleId:handler];
+        child.path = [[NSWorkspace sharedWorkspace] URLForApplicationWithBundleIdentifier:(__bridge NSString *)handler];
         [children addObject:child];
     }
 

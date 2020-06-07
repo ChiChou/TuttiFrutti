@@ -21,14 +21,13 @@ typedef NS_ENUM(NSUInteger, URLTypeItemType) {
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSImage *icon;
 @property (nonatomic, retain) NSString *identifier;
+@property (nonatomic, retain) NSURL *path;
 @property (nonatomic, retain, nullable) NSArray<URLItem*> *children;
 
 - (BOOL)isGroup;
 + (instancetype)groupWithScheme:(CFStringRef)scheme;
-+ (instancetype)groupWithScheme:(CFStringRef)scheme appleOnly:(BOOL)appleOnly;
 
 + (NSArray<URLItem *>*)allURLs;
-+ (NSArray<URLItem *>*)allURLsWithFilter:(NSString *_Nullable)keyword appleOnly:(BOOL)appleOnly;
 @end
 
 NS_ASSUME_NONNULL_END
