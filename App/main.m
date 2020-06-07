@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "NetBottom.h"
 
 #if 0
 #import "NaiveClassDump.h"
@@ -20,6 +21,6 @@ int main(int argc, const char * argv[]) {
             NSLog(@"%@", result);
         }];
 #endif
-    }
+    }    
     return NSApplicationMain(argc, argv);
 }

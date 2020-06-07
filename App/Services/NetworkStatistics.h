@@ -39,26 +39,26 @@
  *     gcc-arm64  netbottom.c -o /tmp/netbottom.x86 -framework CoreFoundation -framework NetworkStatistics   -framework CoreFoundation -F /System/Library/PrivateFrameworks
  *
  * On iOS you'll also need an entitlement
-
-<pre>
-#if 0
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-        <key>com.apple.private.network.statistics</key>
-        <true/>
-        <key>platform-application</key>
-        <true/>
-</dict>
-</plist>
-#endif
-</pre>
-
+ 
+ <pre>
+ #if 0
+ <?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+ <plist version="1.0">
+ <dict>
+ <key>com.apple.private.network.statistics</key>
+ <true/>
+ <key>platform-application</key>
+ <true/>
+ </dict>
+ </plist>
+ #endif
+ </pre>
+ 
  * and/or sysctl net.statistics_privcheck=0
  *
-
-
+ 
+ 
  *
  *
  * PoC ONLY. There is a LOT that can be fixed here - for one, DNS lookups in main queue may block for a long while!
@@ -76,14 +76,23 @@ typedef void     *NStatManagerRef;
 typedef void     *NStatSourceRef;
 
 NStatManagerRef    NStatManagerCreate (const struct __CFAllocator *,
-                 dispatch_queue_t,
-                 void (^)(void *, void *));
+                                       dispatch_queue_t,
+                                       void (^)(void *, void *));
 
 int NStatManagerSetInterfaceTraceFD(NStatManagerRef, int fd);
 int NStatManagerSetFlags(NStatManagerRef, int Flags);
 int NStatManagerAddAllTCPWithFilter(NStatManagerRef, int something, int somethingElse);
 int NStatManagerAddAllUDPWithFilter(NStatManagerRef, int something, int somethingElse);
 void *NStatSourceQueryDescription(NStatSourceRef);
+
+void NStatManagerDestroy(void *manager);
+
+void NStatSourceSetCountsBlock(void *source, void (^)(CFDictionaryRef));
+void NStatSourceSetDescriptionBlock(void *source, void (^)(CFDictionaryRef));
+
+void NStatManagerAddAllTCP(void *manager);
+void NStatManagerAddAllUDP(void *manager);
+
 
 extern CFStringRef kNStatProviderInterface;
 extern CFStringRef kNStatProviderRoute;
@@ -194,10 +203,97 @@ extern CFStringRef kNStatSrcTCPStateSynReceived;
 extern CFStringRef kNStatSrcTCPStateSynSent;
 extern CFStringRef kNStatSrcTCPStateTimeWait;
 
-CFStringRef NStatSourceCopyProperty (NStatSourceRef , CFStringRef);
-void NStatSourceSetDescriptionBlock (NStatSourceRef arg,  void (^)(CFDictionaryRef));
-void NStatSourceSetRemovedBlock (NStatSourceRef arg,  void (^)(void));
+
+@interface NWStatisticsManager : NSObject
+{}
+
+- (BOOL)addAllUDP:(unsigned long long)arg1;
+- (BOOL)addAllTCP:(unsigned long long)arg1;
+
+@end
+
+@protocol NWStatisticsSourceDelegate <NSObject>
+
+@optional
+-(void)sourceDidReceiveDescription:(id)arg1;
+-(void)sourceDidReceiveCounts:(id)arg1;
+
+@end
+
+@interface NWStatisticsSource : NSObject {
+    unsigned long long _countsSeqno;
+    NSObject<NWStatisticsSourceDelegate> * _delegate;
+    unsigned long long _descriptorSeqno;
+    unsigned int  _filter;
+    struct nstat_counts {
+        unsigned long long nstat_rxpackets;
+        unsigned long long nstat_rxbytes;
+        unsigned long long nstat_txpackets;
+        unsigned long long nstat_txbytes;
+        unsigned long long nstat_cell_rxbytes;
+        unsigned long long nstat_cell_txbytes;
+        unsigned long long nstat_wifi_rxbytes;
+        unsigned long long nstat_wifi_txbytes;
+        unsigned long long nstat_wired_rxbytes;
+        unsigned long long nstat_wired_txbytes;
+        unsigned int nstat_rxduplicatebytes;
+        unsigned int nstat_rxoutoforderbytes;
+        unsigned int nstat_txretransmit;
+        unsigned int nstat_connectattempts;
+        unsigned int nstat_connectsuccesses;
+        unsigned int nstat_min_rtt;
+        unsigned int nstat_avg_rtt;
+        unsigned int nstat_var_rtt;
+    } _last_counts;
+    NWStatisticsManager * _manager;
+    unsigned int _provider;
+    unsigned long long _reference;
+    bool _removing;
+}
+
+@property (readonly) const struct nstat_counts _counts;
+@property (readonly) long long connectAttempts;
+@property (readonly) long long connectSuccesses;
+@property (nonatomic, readonly, copy) NSDictionary *counts;
+@property (retain) NSObject<NWStatisticsSourceDelegate> *delegate;
+@property bool hasCounts;
+@property bool hasDescriptor;
+@property bool hasNewKernelInfo;
+@property (readonly) NWStatisticsManager *manager;
+@property unsigned long long reference;
+@property (getter=isRemoved) bool removed;
+@property bool removing;
+@property (readonly) double rttAverage;
+@property (readonly) double rttMinimum;
+@property (readonly) double rttVariation;
+@property (readonly) unsigned long long rxBytes;
+@property (readonly) unsigned long long rxCellularBytes;
+@property (readonly) long long rxDuplicateBytes;
+@property (readonly) long long rxOutOfOrderBytes;
+@property (readonly) unsigned long long rxPackets;
+@property (readonly) unsigned long long rxWiFiBytes;
+@property (readonly) unsigned long long rxWiredBytes;
+@property (readonly) unsigned long long txBytes;
+@property (readonly) unsigned long long txCellularBytes;
+@property (readonly) unsigned long long txPackets;
+@property (readonly) long long txRetransmittedBytes;
+@property (readonly) unsigned long long txWiFiBytes;
+@property (readonly) unsigned long long txWiredBytes;
+
+@end
+
+@protocol NWStatisticsManagerDelegate <NSObject>
+
+@optional
+- (void)statisticsManager:(NWStatisticsManager *)mgr didReceiveDirectSystemInformation:(NSDictionary *)info;
+- (void)statisticsManager:(NWStatisticsManager *)mgr didRemoveSource:(NWStatisticsSource *)source;
+- (void)statisticsManager:(NWStatisticsManager *)mgr didAddSource:(NWStatisticsSource *)source;
+@end
 
 
+CFStringRef NStatSourceCopyProperty(NStatSourceRef, CFStringRef);
+void NStatSourceSetDescriptionBlock(NStatSourceRef arg, void (^)(CFDictionaryRef));
+void NStatSourceSetRemovedBlock(NStatSourceRef arg, void (^)(NWStatisticsSource *src));
+void NStatSourceSetEventsBlock(NStatSourceRef arg, void (^)(NWStatisticsSource *src));
 
 /// End NetworkStatistics.h

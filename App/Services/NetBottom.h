@@ -19,7 +19,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
 @interface NetBottom : NSObject
+@property(nonatomic, assign) int fd;
+@property(nonatomic, assign) NStatManagerRef nm;
+
++ (instancetype)shared;
+- (void)start;
+- (void)end;
 
 @end
 

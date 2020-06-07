@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		920AFA82248A7FED00AF8A39 /* NetworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 920AFA81248A7FED00AF8A39 /* NetworkViewController.m */; };
 		AA04180E240A22E900EDAAEC /* ClassDumper.m in Sources */ = {isa = PBXBuildFile; fileRef = AA04180D240A22E900EDAAEC /* ClassDumper.m */; };
 		AA041810240A22E900EDAAEC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA04180F240A22E900EDAAEC /* main.m */; };
 		AA041814240A22E900EDAAEC /* ClassDumper.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = AA041809240A22E900EDAAEC /* ClassDumper.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -55,6 +56,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		920AFA80248A7FED00AF8A39 /* NetworkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkViewController.h; sourceTree = "<group>"; };
+		920AFA81248A7FED00AF8A39 /* NetworkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkViewController.m; sourceTree = "<group>"; };
 		AA041809240A22E900EDAAEC /* ClassDumper.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = ClassDumper.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA04180B240A22E900EDAAEC /* ClassDumperProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassDumperProtocol.h; sourceTree = "<group>"; };
 		AA04180C240A22E900EDAAEC /* ClassDumper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassDumper.h; sourceTree = "<group>"; };
@@ -160,6 +163,8 @@
 			isa = PBXGroup;
 			children = (
 				AA550BDD2409572C0026FCD8 /* ServicesViewController.h */,
+				920AFA80248A7FED00AF8A39 /* NetworkViewController.h */,
+				920AFA81248A7FED00AF8A39 /* NetworkViewController.m */,
 				AA550BDE2409572C0026FCD8 /* ServicesViewController.m */,
 				AA45F839240A9B1300846A36 /* ClassDumpOutlineView.h */,
 				AA45F83A240A9B1300846A36 /* ClassDumpOutlineView.m */,
@@ -339,6 +344,7 @@
 				AA45F83F240A9EFE00846A36 /* DumpResult.m in Sources */,
 				AA550BDF2409572C0026FCD8 /* ServicesViewController.m in Sources */,
 				AA45F845240ABE9B00846A36 /* NetBottom.m in Sources */,
+				920AFA82248A7FED00AF8A39 /* NetworkViewController.m in Sources */,
 				AAAE3C73240975CF00AC2CDB /* WindowController.m in Sources */,
 				AA0EB0DE240B9D0500F51DD8 /* URLItem.m in Sources */,
 				AA550BDA240951370026FCD8 /* MachServiceItem.m in Sources */,
