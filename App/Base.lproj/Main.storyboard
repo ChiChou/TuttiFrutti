@@ -894,6 +894,8 @@
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="btnAppleOnly" destination="qo4-yf-SH9" id="GJK-3r-Ef9"/>
+                        <outlet property="btnSafariOnly" destination="2aB-lG-u2V" id="TDU-74-9nk"/>
                         <outlet property="indicator" destination="CS1-QQ-Bmw" id="1gR-mt-zTB"/>
                         <outlet property="outlineView" destination="QAe-Vy-DnS" id="QwR-CF-ykj"/>
                     </connections>

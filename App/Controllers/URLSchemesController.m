@@ -6,6 +6,7 @@
 //  Copyright © 2020 me.chichou. All rights reserved.
 //
 
+#import <dispatch/dispatch.h>
 #import "URLSchemesController.h"
 #import "CodeSignChecker.h"
 
@@ -14,10 +15,15 @@ static NSSet *safariAllowes = nil;
 @interface URLSchemesController() {
     BOOL appleOnly;
     BOOL safariReachable;
+  
+    dispatch_queue_t q;
 }
 
 @property (weak) IBOutlet NSProgressIndicator *indicator;
 @property (weak) IBOutlet NSOutlineView *outlineView;
+@property (weak) IBOutlet NSButton *btnAppleOnly;
+@property (weak) IBOutlet NSButton *btnSafariOnly;
+
 @end
 
 @implementation URLSchemesController
@@ -63,16 +69,19 @@ static NSSet *safariAllowes = nil;
     self.outlineView.delegate = self;
     self.outlineView.dataSource = self;
   
+    q = dispatch_queue_create("me.chichou.tuttifrutti.background", DISPATCH_QUEUE_SERIAL);
+  
     [self refresh];
 }
 
 - (void)refresh {
-  self.indicator.hidden = NO;
+  self.btnSafariOnly.enabled = self.btnAppleOnly.enabled = self.indicator.hidden = NO;
   [self.indicator startAnimation:nil];
 
   self.data = @[];
   [self.outlineView reloadData];
-  [self performSelectorInBackground:@selector(fetch) withObject:nil];
+
+  dispatch_async(q, ^{ [self fetch]; });
 }
 
 - (void)fetch {
@@ -106,7 +115,7 @@ static NSSet *safariAllowes = nil;
 
 - (void)update:(NSArray *)data {
   [self.indicator stopAnimation:nil];
-  self.indicator.hidden = YES;
+  self.btnSafariOnly.enabled = self.btnAppleOnly.enabled = self.indicator.hidden = YES;
 
   self.data = data;
   [self.outlineView reloadData];
