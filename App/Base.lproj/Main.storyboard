@@ -683,16 +683,29 @@
                                                                 </connections>
                                                             </menuItem>
                                                             <menuItem isSeparatorItem="YES" id="Kq8-3S-0Ad"/>
-                                                            <menuItem title="Open in IDA.app" identifier="openida" id="Dxa-9W-6Nh">
+                                                            <menuItem title="Open in IDA.app" identifier="open.ida" id="Dxa-9W-6Nh">
                                                                 <modifierMask key="keyEquivalentModifierMask"/>
                                                                 <connections>
                                                                     <action selector="openInIDA:" target="o8E-hg-bCI" id="la5-te-gNP"/>
                                                                 </connections>
                                                             </menuItem>
-                                                            <menuItem title="Open in IDA64.app" identifier="openida64" id="e7B-Nl-2WT">
+                                                            <menuItem title="Open in IDA64.app" identifier="open.ida64" id="e7B-Nl-2WT">
                                                                 <modifierMask key="keyEquivalentModifierMask"/>
                                                                 <connections>
                                                                     <action selector="openInIDA:" target="o8E-hg-bCI" id="s0M-Nb-IVo"/>
+                                                                </connections>
+                                                            </menuItem>
+                                                            <menuItem isSeparatorItem="YES" id="JS3-p2-SBE"/>
+                                                            <menuItem title="Open in Cutter" identifier="open.cutter" id="mLC-zC-oNZ">
+                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                <connections>
+                                                                    <action selector="openInIDA:" target="o8E-hg-bCI" id="0NA-fh-tNY"/>
+                                                                </connections>
+                                                            </menuItem>
+                                                            <menuItem title="Open in Hopper Disassembler" identifier="open.hopper" id="Pwf-zT-xOW">
+                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                <connections>
+                                                                    <action selector="openInIDA:" target="o8E-hg-bCI" id="bxg-J5-Pfj"/>
                                                                 </connections>
                                                             </menuItem>
                                                         </items>

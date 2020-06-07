@@ -197,11 +197,15 @@
 
 - (IBAction)openInIDA:(id)sender {
     NSMenuItem *menu = (NSMenuItem *)sender;
-    NSMutableString *bundle = [NSMutableString stringWithString:@"ida"];
-    if ([menu.identifier isEqualToString:@"openida64"]) {
-        [bundle appendString:@"64"];
+    NSString *bundle = menu.identifier.pathExtension;
+    if (![[NSWorkspace sharedWorkspace] openFile:self->selected.path withApplication:bundle]) {
+        NSString *msg = [NSString stringWithFormat:@"'%@' is probably not installed", bundle];
+        NSAlert *alert = [[NSAlert alloc] init];
+        [alert setMessageText:@"Application not found"];
+        [alert setInformativeText:msg];
+        [alert addButtonWithTitle:@"Ok"];
+        [alert runModal];
     }
-    [[NSWorkspace sharedWorkspace] openFile:self->selected.path withApplication:bundle];
 }
 
 @end
