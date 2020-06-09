@@ -21,7 +21,7 @@
 
 - (void) start {
     void (^description_callback_block)(CFDictionaryRef) = ^(CFDictionaryRef desc) {
-        // NSLog(@"%@", desc);
+        NSLog(@"%@", desc);
     };
     
     void (^removal_callback_block)(NWStatisticsSource *) = ^(NWStatisticsSource *src) {
@@ -46,8 +46,8 @@
     NSString *filename = [NSTemporaryDirectory()
                           stringByAppendingString:[NSProcessInfo.processInfo.globallyUniqueString
                                                    stringByAppendingString:@"-netbottom.trace"]];
-    
-    self.fd = open(filename.UTF8String, O_RDWR | O_CREAT | O_TRUNC);
+    self.filename = filename.UTF8String;
+    self.fd = open(self.filename, O_RDWR | O_CREAT | O_TRUNC);
     rc = NStatManagerSetInterfaceTraceFD(nm, self.fd);
     rc = NStatManagerAddAllUDPWithFilter(nm, 0, 0);
     rc = NStatManagerAddAllTCPWithFilter(nm, 0, 0);
@@ -58,6 +58,7 @@
 - (void) end {
     NStatManagerDestroy(self.nm);
     close(self.fd);
+    unlink(self.filename);
 }
 
 @end
