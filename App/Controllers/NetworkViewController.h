@@ -7,10 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "NetBottom.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NetworkViewController : NSViewController <NSOutlineViewDelegate, NSOutlineViewDataSource>
+@interface NetworkViewController : NSViewController <ConnectionsRefreshDelegate>
 
 @end
 

@@ -19,15 +19,28 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol ConnectionsRefreshDelegate <NSObject>
+@optional
+- (void)didAdd:(NSDictionary *)info;
+- (void)didUpdate:(NSDictionary *)info;
+- (void)didRemove:(NSString *)uuid;
+- (void)didChange;
+@end
+
 
 @interface NetBottom : NSObject
 @property(nonatomic, assign) const char *filename;
 @property(nonatomic, assign) int fd;
 @property(nonatomic, assign) NStatManagerRef nm;
+@property(nonatomic) NSMutableDictionary<NSValue *, NSDictionary *> *active;
+@property(nonatomic) id<ConnectionsRefreshDelegate> delegate;
+@property(nonatomic, assign) BOOL includesTCP;
+@property(nonatomic, assign) BOOL includesUDP;
 
 + (instancetype)shared;
 - (void)start;
-- (void)end;
+- (void)stop;
+- (NSArray *)connections;
 
 @end
 

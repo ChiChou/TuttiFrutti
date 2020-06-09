@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		920AFA82248A7FED00AF8A39 /* NetworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 920AFA81248A7FED00AF8A39 /* NetworkViewController.m */; };
+		92B888C9248FA7E6001BFB60 /* NetworkTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B888C8248FA7E6001BFB60 /* NetworkTableView.m */; };
 		AA04180E240A22E900EDAAEC /* ClassDumper.m in Sources */ = {isa = PBXBuildFile; fileRef = AA04180D240A22E900EDAAEC /* ClassDumper.m */; };
 		AA041810240A22E900EDAAEC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA04180F240A22E900EDAAEC /* main.m */; };
 		AA041814240A22E900EDAAEC /* ClassDumper.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = AA041809240A22E900EDAAEC /* ClassDumper.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -58,6 +59,8 @@
 /* Begin PBXFileReference section */
 		920AFA80248A7FED00AF8A39 /* NetworkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkViewController.h; sourceTree = "<group>"; };
 		920AFA81248A7FED00AF8A39 /* NetworkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkViewController.m; sourceTree = "<group>"; };
+		92B888C7248FA7E6001BFB60 /* NetworkTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NetworkTableView.h; path = App/Models/NetworkTableView.h; sourceTree = SOURCE_ROOT; };
+		92B888C8248FA7E6001BFB60 /* NetworkTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = NetworkTableView.m; path = App/Models/NetworkTableView.m; sourceTree = SOURCE_ROOT; };
 		AA041809240A22E900EDAAEC /* ClassDumper.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = ClassDumper.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA04180B240A22E900EDAAEC /* ClassDumperProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassDumperProtocol.h; sourceTree = "<group>"; };
 		AA04180C240A22E900EDAAEC /* ClassDumper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassDumper.h; sourceTree = "<group>"; };
@@ -163,11 +166,9 @@
 			isa = PBXGroup;
 			children = (
 				AA550BDD2409572C0026FCD8 /* ServicesViewController.h */,
+				AA550BDE2409572C0026FCD8 /* ServicesViewController.m */,
 				920AFA80248A7FED00AF8A39 /* NetworkViewController.h */,
 				920AFA81248A7FED00AF8A39 /* NetworkViewController.m */,
-				AA550BDE2409572C0026FCD8 /* ServicesViewController.m */,
-				AA45F839240A9B1300846A36 /* ClassDumpOutlineView.h */,
-				AA45F83A240A9B1300846A36 /* ClassDumpOutlineView.m */,
 				AAAE3C71240975CF00AC2CDB /* WindowController.h */,
 				AAAE3C72240975CF00AC2CDB /* WindowController.m */,
 				AA0EB0DF240B9DC300F51DD8 /* URLSchemesController.h */,
@@ -216,6 +217,10 @@
 		AA5FBFCD24091CD200EEF195 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AA45F839240A9B1300846A36 /* ClassDumpOutlineView.h */,
+				AA45F83A240A9B1300846A36 /* ClassDumpOutlineView.m */,
+				92B888C7248FA7E6001BFB60 /* NetworkTableView.h */,
+				92B888C8248FA7E6001BFB60 /* NetworkTableView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -347,6 +352,7 @@
 				920AFA82248A7FED00AF8A39 /* NetworkViewController.m in Sources */,
 				AAAE3C73240975CF00AC2CDB /* WindowController.m in Sources */,
 				AA0EB0DE240B9D0500F51DD8 /* URLItem.m in Sources */,
+				92B888C9248FA7E6001BFB60 /* NetworkTableView.m in Sources */,
 				AA550BDA240951370026FCD8 /* MachServiceItem.m in Sources */,
 				AAB13C8F240BB9DD00739BF6 /* CodeSignChecker.m in Sources */,
 				AA550BD624094E910026FCD8 /* MachServices.m in Sources */,

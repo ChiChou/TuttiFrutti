@@ -293,7 +293,7 @@ extern CFStringRef kNStatSrcTCPStateTimeWait;
 
 CFStringRef NStatSourceCopyProperty(NStatSourceRef, CFStringRef);
 void NStatSourceSetDescriptionBlock(NStatSourceRef arg, void (^)(CFDictionaryRef));
-void NStatSourceSetRemovedBlock(NStatSourceRef arg, void (^)(NWStatisticsSource *src));
+void NStatSourceSetRemovedBlock(NStatSourceRef arg, void (^)(void));
 void NStatSourceSetEventsBlock(NStatSourceRef arg, void (^)(NWStatisticsSource *src));
 
 /// End NetworkStatistics.h

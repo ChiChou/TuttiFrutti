@@ -17,10 +17,12 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
 #if 0
         // test class dumper
-        [[NaiveClassDump shared] dumpForPath:[NSURL fileURLWithPath:@"/System/Library/CoreServices/SubmitDiagInfo"] withReply:^(NSError * _Nonnull err, DumpResult * _Nonnull result) {
+        [[NaiveClassDump shared]
+         dumpForPath:[NSURL fileURLWithPath:@"/System/Library/CoreServices/SubmitDiagInfo"]
+         withReply:^(NSError * _Nonnull err, DumpResult * _Nonnull result) {
             NSLog(@"%@", result);
         }];
 #endif
-    }    
+    }
     return NSApplicationMain(argc, argv);
 }
