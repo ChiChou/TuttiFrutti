@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NetworkTableView : NSTableView <NSTableViewDelegate, NSTableViewDataSource>
 
-@property (strong) NSArray<NSDictionary*> *data;
+@property (nonatomic, strong) NSArray<NSDictionary*> *data;
 @property (strong) NSDictionary<NSString *, NSNumber *> *mapping;
 
 @end

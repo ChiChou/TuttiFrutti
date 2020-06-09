@@ -56,7 +56,13 @@
     _net.includesTCP = includeTCP;
 
     _tableView.data = _net.connections;
+    NSInteger index = _tableView.selectedRow;
     [_tableView reloadData];
+    
+    if (index != -1) {
+        NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:index];
+        [_tableView selectRowIndexes:indexSet byExtendingSelection:NO];
+    }
 }
 
 @end
