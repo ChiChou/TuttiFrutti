@@ -18,14 +18,14 @@
 @property (weak) IBOutlet NetworkTableView *tableView;
 
 @property NetBottom *net;
+@property (weak) IBOutlet NSButton *checkTCP;
+@property (weak) IBOutlet NSButton *checkUDP;
 
 @end
 
 @implementation NetworkViewController
 
 - (IBAction)onToggleSwitches:(id)sender {
-    _net.includesUDP = includeUDP;
-    _net.includesTCP = includeTCP;
     [self refresh];
 }
 
@@ -35,7 +35,10 @@
     NetBottom *net = [NetBottom shared];
     net.delegate = self;
     [net start];
-    
+
+    _checkUDP.state = _checkTCP.state = NSControlStateValueOn;
+    includeUDP = includeTCP = YES;
+
     [self refresh];
     self.net = net;
 }
@@ -49,6 +52,9 @@
 }
 
 - (void)refresh {
+    _net.includesUDP = includeUDP;
+    _net.includesTCP = includeTCP;
+
     _tableView.data = _net.connections;
     [_tableView reloadData];
 }
