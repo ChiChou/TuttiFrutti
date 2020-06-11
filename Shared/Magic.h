@@ -11,5 +11,6 @@
 
 #import <Foundation/Foundation.h>
 FOUNDATION_EXPORT NSString *const kNotificationClassDumpLoading;
+FOUNDATION_EXPORT NSString *const kNotificationSearch;
 
 #endif /* Magic_h */

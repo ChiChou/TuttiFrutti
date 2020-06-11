@@ -9,3 +9,4 @@
 #import "Magic.h"
 
 NSString *const kNotificationClassDumpLoading = @"NotificationClassDumpLoading";
+NSString *const kNotificationSearch = @"NotificationSearch";
