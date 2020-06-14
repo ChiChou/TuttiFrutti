@@ -32,20 +32,30 @@
         [children addObject:[MachServiceItem itemWithInfo:info]];
     }
 
-    group.services = [children copy];
+    group->children = [children copy];
     return group;
 }
 
 + (id)itemWithInfo:(NSDictionary *)info {
     MachServiceItem *item = [MachServiceItem new];
-    item.services = @[];
+    item->children = @[];
     item.identifier = info[@"Label"];
     item.info = info;
     return item;
 }
 
 - (BOOL)isGroup {
-    return [services count] > 0;
+    return children.count > 0;
+}
+
+- (NSArray<MachServiceItem *>*)services {
+    if (self.filter && self.filter.length) {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:
+                                  @"identifier CONTAINS [cd] %@ or info CONTAINS [cd] %@", self.filter, self.filter];
+        return [children filteredArrayUsingPredicate:predicate];
+    }
+
+    return children;
 }
 
 - (NSString*)path {

@@ -10,13 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MachServiceItem : NSObject
-{
-    NSString *identifier;
-    NSArray<MachServiceItem*> *services;
-    NSDictionary *info;
-};
+@interface MachServiceItem : NSObject {
+    NSArray<MachServiceItem *>* children;
+}
 
+@property (nonatomic, retain) NSString *filter;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) NSArray<MachServiceItem*> *services;
 @property (nonatomic, retain) NSDictionary *info;

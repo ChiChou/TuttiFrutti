@@ -29,14 +29,34 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self refresh];
     
+    dataSource = [NSMutableArray arrayWithObjects:
+                  [MachServiceItem groupWithName:@"System"],
+                  [MachServiceItem groupWithName:@"User"],
+                  nil];
+
+    _outlineView.delegate = self;
+    _outlineView.dataSource = self;
+    [self performSelector:@selector(expandSourceList) withObject:nil afterDelay:0.0];
+
     _detailPanel.hidden = YES;
     
     [[NSNotificationCenter defaultCenter] addObserver:self
-        selector:@selector(receiveClassDumpLoadingNotification:)
-        name:kNotificationClassDumpLoading
-        object:nil];
+                                             selector:@selector(receiveClassDumpLoadingNotification:)
+                                                 name:kNotificationClassDumpLoading
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveSearchNotification:)
+                                                 name:kNotificationSearch
+                                               object:nil];
+}
+
+- (void)receiveSearchNotification:(NSNotification *)notification {
+    NSString *keyword = notification.object;
+    for (MachServiceItem* group in self.dataSource) {
+        group.filter = keyword;
+        [self.outlineView reloadItem:group reloadChildren:YES];
+    }
 }
 
 - (void)receiveClassDumpLoadingNotification:(NSNotification *) notification {
@@ -51,20 +71,7 @@
     }
 }
 
-- (void)refresh {
-    dataSource = [NSMutableArray arrayWithObjects:
-                  [MachServiceItem groupWithName:@"System"],
-                  [MachServiceItem groupWithName:@"User"],
-                  nil];
-
-    _outlineView.delegate = self;
-    _outlineView.dataSource = self;
-
-    [self performSelector:@selector(expandSourceList) withObject:nil afterDelay:0.0];
-}
-
-- (IBAction)expandSourceList
-{
+- (IBAction)expandSourceList {
     [_outlineView expandItem:nil expandChildren:YES];
 }
 
@@ -152,7 +159,6 @@
         current++;
         if (group.services.count > index - current) {
             // update elements
-            // todo: What is data binding?
             MachServiceItem *item = self->selected = group.services[index - current];
             [_detailField setStringValue:item.info.description];
             [_pathField setStringValue:item.path];

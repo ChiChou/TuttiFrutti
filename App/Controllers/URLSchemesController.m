@@ -139,7 +139,6 @@ static NSSet *safariAllowes = nil;
         }]];
     }
 
-    // todo: keyword
     [self performSelectorOnMainThread:@selector(update:) withObject:result waitUntilDone:NO];
 }
 
