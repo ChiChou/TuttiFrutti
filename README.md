@@ -4,7 +4,7 @@ I've always wanted to build something like James Forshaw did or SysterInternals 
 
 ![Services](Screenshots/Services.png)
 
-## Never Asked Questions
+## Barely Asked Questions
 
 **Why not SwiftUI?**
 
