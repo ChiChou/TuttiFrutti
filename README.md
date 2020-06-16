@@ -1,5 +1,7 @@
 # TuttiFrutti
 
+![build](https://github.com/ChiChou/TuttiFrutti/workflows/build/badge.svg?branch=master)
+
 I've always wanted to build something like James Forshaw did or SysterInternals Suite on macOS...
 
 ![Services](Screenshots/Services.png)
