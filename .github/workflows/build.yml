@@ -22,12 +22,8 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
-    - uses: sersoft-gmbh/xcodebuild-action@v1
-      with:
-        project: TuttiFrutti.xcodeproj
-        scheme: TuttiFrutti
-        destination: platform=macOS
-        action: test
+    - name: build
+      run: xcodebuild
 
     - name: create zip
       run: "zip -r build/Release/TuttiFrutti.app build.zip"
